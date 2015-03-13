@@ -4,35 +4,20 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/principal.css">
 </head>
 <body>
 
-<!--Menu principal--!>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li> 
-        <li><a href="#">Page 3</a></li> 
-	<!-- DROPDOWN MENU --!>
-	<li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li> 
-          </ul>
-        </li>
-      </ul>
+  <div class="container">
+    <div class="header">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><a href="#">Home</a></li>
+          <li role="presentation"><a href="#">About</a></li>
+          <li role="presentation"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">Hospital Web</h3>
     </div>
   </div>
-</nav>
