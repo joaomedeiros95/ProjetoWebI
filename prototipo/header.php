@@ -18,6 +18,6 @@
           <li role="presentation"><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <h3 class="text-muted">Hospital Web</h3>
+      <h3 class="text-muted">Hospital Webbbbb</h3>
     </div>
   </div>
