@@ -12,13 +12,14 @@
 <div class="logo-header" id="logo-header">
   <div class="container">
     <div class="header">
-      <!-- <nav>
-        <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active"><a href="#">Home</a></li>
-          <li role="presentation"><a href="#">About</a></li>
-          <li role="presentation"><a href="#">Contact</a></li>
+      <nav>
+        <ul class="nav masthead-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Login</a></li>
         </ul>
-      </nav> -->
+      </nav>
       <h3 class="text-muted nome-logo">Hospital Web</h3>
     </div>
   </div>
