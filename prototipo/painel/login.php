@@ -11,7 +11,7 @@
 
 <div class="container">
 
-  <form class="form-signin">
+    <form class="form-signin" method="post" action="validaLogin.php">
     <h2 class="form-signin-heading text-center">Hospital Web</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
@@ -28,3 +28,7 @@
 </div> <!-- /container -->
 
 <?php include_once('../footer.php') ?>
+
+<body/>
+
+</html>

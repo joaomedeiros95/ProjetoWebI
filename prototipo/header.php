@@ -14,10 +14,11 @@
     <div class="header">
       <nav>
         <ul class="nav masthead-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Contato</a></li>
-          <li><a href="#">Login</a></li>
+          <li class="active"><a href="home.php">Home</a></li>
+          <li><a href="sobre.php">Sobre</a></li>
+          <li><a href="contatos.php">Contato</a></li>
+          <li><a href="painel/login.php">Login</a></li>
+          <li><a href="cadastro.php">Cadastro</a></li>
         </ul>
       </nav>
       <h3 class="text-muted nome-logo">Hospital Web</h3>

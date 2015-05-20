@@ -219,3 +219,28 @@
 .panel-body .navbar-inverse a {
   color: white !important;
 }
+.imgForm{
+    
+    margin-left: 40%;
+}
+.localForm{
+    
+    margin-left: 35%;
+    
+}
+
+.btForm{
+    
+    margin-top: 5%;
+    margin-left: 10%;
+}
+.cor{
+    
+    background-color: #cf1717;
+}
+
+.labelLoc{
+    
+    margin-left: 5%;
+    
+}
