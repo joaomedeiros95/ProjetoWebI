@@ -13,7 +13,7 @@
         
             <div class="imgForm">
 
-                <img src="img/sgh.png">
+                <img src="img/sgh.jpg">
 
             </div>
         
