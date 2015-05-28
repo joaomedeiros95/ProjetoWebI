@@ -6,28 +6,11 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bs/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/localizacao.css">
-         <link href="css/bootstrap.min.css" rel="stylesheet">
         <title>Painel do paciente</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="dashboard.css" rel="stylesheet">
-
-        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-        <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
         <style type="text/css">#idadv {display:none;}</style></head>
 
     <body>
@@ -44,7 +27,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right" style="color: black">
-                        <li ><a style="color: black" href="#">Dashboard</a></li>
+                        <li><a style="color: black" href="#">Dashboard</a></li>
                         <li><a style="color: black" href="#">Settings</a></li>
                         <li><a style="color: black" href="#">Profile</a></li>
                         <li><a style="color: black" href="#">Help</a></li>

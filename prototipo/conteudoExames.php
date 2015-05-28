@@ -15,9 +15,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th>'.$recebeDados04[0].'</th>
-                                    <th>'.$recebeDados04[1].'</th>
-                                    <td>'.$recebeDados04[2].'</td>
+                                    <th>'.$recebeDados03[0].'</th>
+                                    <th>'.$recebeDados03[1].'</th>
+                                    <td>'.$recebeDados03[2].'</td>
                                     <td></td>
                                     <td>t</td>
                                 </tr>

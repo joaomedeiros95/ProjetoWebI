@@ -28,7 +28,3 @@
 </div> <!-- /container -->
 
 <?php include_once('../footer.php') ?>
-
-<body/>
-
-</html>

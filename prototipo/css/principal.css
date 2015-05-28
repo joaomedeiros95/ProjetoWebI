@@ -19,6 +19,7 @@
   margin-top: 35px;
   font-size: 35px;
   transition: all 0.5s;
+  width: 30%;
 }
 
 .nome-logo.shrink {

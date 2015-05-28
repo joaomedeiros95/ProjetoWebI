@@ -16,10 +16,10 @@
                             <tbody>
                                 <tr>
                                     <th>'.$recebeDados01[0].'</th>
-                                    <th>'.$recebeDados02[1].'</th>
-                                    <td>'.$recebeDados02[2].'</td>
-                                    <td>'.$recebeDados02[3].'</td>
-                                    <td>'.$recebeDados02[4].'</td>
+                                    <th>'.$recebeDados01[1].'</th>
+                                    <td>'.$recebeDados01[2].'</td>
+                                    <td>'.$recebeDados01[3].'</td>
+                                    <td>'.$recebeDados01[4].'</td>
                                 </tr>
                             
                             </tbody>

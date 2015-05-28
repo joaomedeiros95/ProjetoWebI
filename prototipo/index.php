@@ -19,6 +19,7 @@
     </div><!--/.row -->
   </div><!--/.container -->
 </div>
+</div>
 
 <div class="container">
   <h2>Sobre</h2>

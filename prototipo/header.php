@@ -14,7 +14,7 @@
     <div class="header">
       <nav>
         <ul class="nav masthead-nav">
-          <li class="active"><a href="home.php">Home</a></li>
+          <li class="active"><a href="index.php">Home</a></li>
           <li><a href="sobre.php">Sobre</a></li>
           <li><a href="contatos.php">Contato</a></li>
           <li><a href="painel/login.php">Login</a></li>
