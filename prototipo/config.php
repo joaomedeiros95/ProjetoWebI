@@ -12,6 +12,11 @@
     define('BASE', dirname(__FILE__));
     define('DAO', BASE . '/interacaoBD');
     define('CONEXAO', BASE . '/conexaoBD');
+    define('JS', BASE . '/js');
+    define('BSJS', BASE . '/bs/js');
+    define('HOSPITALWEBJS', JS . '/hospitalweb.js');
+    define('JQUERY', JS . '/jquery-2.1.4.min.js');
+    define('BOOTSTRAPJS', BSJS . '/bootstrap.min.js');
 
     /* Varíaveis do BD */
     define('HOST', 'localhost');

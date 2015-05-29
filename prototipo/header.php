@@ -18,7 +18,7 @@
           <li><a href="sobre.php">Sobre</a></li>
           <li><a href="contatos.php">Contato</a></li>
           <li><a href="painel/login.php">Login</a></li>
-          <li><a href="cadastro.php">Cadastro</a></li>
+          <li><a href="painel/cadastro.php">Cadastro</a></li>
         </ul>
       </nav>
       <h3 class="text-muted nome-logo">Hospital Web</h3>
