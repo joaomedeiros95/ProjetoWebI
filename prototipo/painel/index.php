@@ -1,4 +1,11 @@
-<?php include_once('header.php') ?>
+<?php
+    include_once('header.php');
+
+    function contarPessoasPorTipoPessoa($tipo_pessoa) {
+        $pessoa = new pessoaDAO();
+        return mysqli_num_rows($pessoa->selecionaTodosOsPacientes($tipo_pessoa));
+    }
+?>
 
 	<div class="container-fluid">
       <div class="row">
@@ -26,17 +33,17 @@
             <div class="col-xs-6 col-sm-3 placeholder">
             	<img src="../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
               <h4>Pacientes</h4>
-              <span class="text-muted">X Pacientes</span>
+              <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$PACIENTE); ?> Pacientes</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
             	<img src="../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
               <h4>Médicos</h4>
-              <span class="text-muted">X Médicos</span>
+              <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$MEDICO); ?> Médicos</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
             	<img src="../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
               <h4>Enfermeiros</h4>
-              <span class="text-muted">X Enfermeiros</span>
+              <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$ENFERMEIRA); ?> Enfermeiros</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
             	<img src="../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />

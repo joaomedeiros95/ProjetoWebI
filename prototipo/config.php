@@ -22,6 +22,8 @@
     /* Inclui arquivos do banco */
     include_once(getPHP(DAO) . '/DAO.php');
     include_once(getPHP(DAO) . '/pessoaDAO.php');
+    include_once(getPHP(DAO) . '/tipo_pessoaDAO.php');
+
     include_once(getPHP(CONEXAO) . '/conectaBD.php');
     include_once(getPHP(CONEXAO) . '/desconectBD.php');
 

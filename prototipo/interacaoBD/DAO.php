@@ -2,43 +2,44 @@
 /** Classe CRUD - Create, Recovery, Update and Delete
  * @author - Rodolfo Leonardo Medeiros
  * @date - 25/09/2009
- * Arquivo - codigo.class.php
- * @package crud
+ * Arquivo - DAO.php
+ */
+
+/** Modificação e melhoria, agora usando mysqli ao invés de mysql e novos métodos escritos
+ * Classe CRUD - Create, Recovery, Update and Delete
+ * @author - Grupo Bixo Solto
+ * @date - 29/05/2015
+ * Arquivo - DAO.php
  */
 
 /**
- * Para funcionar deve se colocar o seguinte código
- * include_once('config.php');
+ * Ler README no GITHUB que mostra como deve ser usado os DAOs corretamente.
  */
 
 class DAO
 {
-    protected $sql_ins = "";
     protected $tabela = "";
-    protected $sql_sel = "";
     protected $conexao;
-
-    // Caso pretendamos que esta classe seja herdada por outras, então alguns atrubutos podem ser protected
 
     /** Método construtor
      * @method __construct
-     * @param string $tabela
-     * @return $this->tabela
      */
-    public function __construct() // construtor, nome da tabela como parametro
+    public function __construct()
     {
         $this->tabela = str_replace("DAO", "", get_class($this));
         $this->conexao = conectaBD(USER, PASSWORD, HOST, DATABASE);
-        return $this->tabela;
     }
 
+    /** Método destrutor mata a conexão com o BC
+     * @method __construct
+     */
     public function __destruct() {
         desconectarBD($this->conexao);
     }
 
-    /**
-     * Pega todas as tuplas de uma tabela.
-     * @return bool|mysqli_result
+    /** Pega todas tuplas de uma tabela
+     * @method getALL
+     * @return array
      */
     public function getALL() {
         $sql = "SELECT * FROM " . $this->tabela;
@@ -56,28 +57,30 @@ class DAO
      */
     public function inserir($campos, $valores) // funçao de inserçao, campos e seus respectivos valores como parametros
     {
-        $this->sql_ins = "INSERT INTO " . $this->tabela . " ($campos) VALUES ($valores)";
-        if (!$this->ins = mysql_query($this->sql_ins)) {
-            die ("<center>Erro na inclusão " . '<br>Linha: ' . __LINE__ . "<br>" . mysql_error() . "<br>
-                <a href='index.php'>Voltar ao Menu</a></center>");
-        } else {
-            print "<script>location='index.php';</script>";
+        $sql_ins = "INSERT INTO " . $this->tabela . " ($campos) VALUES ($valores)";
+        $ins = mysqli_query($this->conexao, $sql_ins);
+        if (!$ins) {
+            die ("Ocorreu um erro na inserçao: " . mysql_error());
         }
     }
 
-    public function atualizar($camposvalores, $where = NULL) // funçao de ediçao, campos com seus respectivos valores e o campo id que define a linha a ser editada como parametros
-    {
+    /** Método atualizar
+     * @method atualizar
+     * @param string $where
+     * @param string $camposvalores
+     * @example: $camposvalores = " codigo = 2, nome = 'Andrea' " e $where = " codigo=2 AND nome='João' "
+     * @return void
+     */
+    public function atualizar($camposvalores, $where = NULL) {
         if ($where) {
-            $this->sql_upd = "UPDATE  " . $this->tabela . " SET $camposvalores WHERE $where";
+            $sql_upd = "UPDATE  " . $this->tabela . " SET $camposvalores WHERE $where";
         } else {
-            $this->sql_upd = "UPDATE  " . $this->tabela . " SET $camposvalores";
+            $sql_upd = "UPDATE  " . $this->tabela . " SET $camposvalores";
         }
 
-        if (!$this->upd = mysql_query($this->sql_upd)) {
-            die ("<center>Erro na atualização " . "<br>Linha: " . __LINE__ . "<br>" . mysql_error() . "<br>
-                <a href='index.php'>Voltar ao Menu</a></center>");
-        } else {
-            print "<center>Registro Atualizado com Sucesso!<br><a href='index.php'>Voltar ao Menu</a></center>";
+        $upd = mysqli_query($this->conexao, $sql_upd);
+        if (!$upd) {
+            die ("Ocorreu um erro na atualizaçao: " . mysql_error());
         }
     }
 
@@ -87,30 +90,17 @@ class DAO
      * @example: $where = " codigo=2 AND nome='João' "
      * @return void
      */
-    public function excluir($where = NULL) // funçao de exclusao, campo que define a linha a ser editada como parametro
-    {
+    public function excluir($where = NULL) {
         if ($where) {
-            $this->sql_sel = "SELECT * FROM " . $this->tabela . " WHERE $where";
-            $this->sql_del = "DELETE FROM " . $this->tabela . " WHERE $where";
+            $sql_del = "DELETE FROM " . $this->tabela . " WHERE $where";
         } else {
-            $this->sql_sel = "SELECT * FROM " . $this->tabela;
-            $this->sql_del = "DELETE FROM " . $this->tabela;
+            $sql_del = "DELETE FROM " . $this->tabela;
         }
-        $sel = mysql_query($this->sql_sel);
-        $regs = mysql_num_rows($sel);
+        $del = mysqli_query($this->conexao, $sql_del);
 
-        if ($regs > 0) {
-            if (!$this->del = mysql_query($this->sql_del)) {
-                die ("<center>Erro na exclusão " . '<br>Linha: ' . __LINE__ . "<br>" . mysql_error() . "<br>
-                <a href='index.php'>Voltar ao Menu</a></center>");
-            } else {
-                print "<center>Registro Excluído com Sucesso!<br><a href='index.php'>Voltar ao Menu</a></center>";
-            }
-        } else {
-            print "<center>Registro Não encontrado!<br><a href='index.php'>Voltar ao Menu</a></center>";
+        if (!$del) {
+            die ("Ocorreu um erro na remoção: " . mysql_error());
         }
     }
 
 }
-
-?> 
