@@ -1,29 +1,15 @@
 <?php
 
-function conectaBD($banco,$usr,$senha,$host) {
+function conectaBD($usr,$senha,$host, $database) {
     
-    $conecta = mysql_connect($host,$usr,$senha);
+    $conecta = mysqli_connect($host,$usr,$senha, $database);
     
-    if(!conecta){
-        
+    if(!$conecta){
         die(trigger_error("Conexão falhou!"));
         return false;
     }
-    else{
-        
-        echo 'conectou!';
-        $bd = mysql_select_db($banco, $conecta);
-        
-        if(!$bd){
-            
-            die(trigger_error("Falha na conexaõ com o Banco de Dados!"));
-            return false;
-        }
-        else{
-            
-            echo "sucess";
-            return $conecta;
-        }
+    else {
+        return $conecta;
     }
 }
 

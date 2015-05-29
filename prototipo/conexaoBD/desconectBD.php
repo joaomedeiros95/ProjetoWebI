@@ -2,15 +2,9 @@
 
 function desconectarBD($conecta) {
     
-    $fechar = mysql_close($conecta);
-    if(!$fechar){
-        
-        echo "Não foi possivel desconectar";
-        return false;
-    }
-    else{
-        return true;
+    $fechar = mysqli_close($conecta);
+    if(!$fechar) {
+        die("Ocorreu um erro ao fechar conexão com o Banco");
     }
     
 }
-?>
