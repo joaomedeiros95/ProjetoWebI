@@ -16,7 +16,7 @@
  * Ler README no GITHUB que mostra como deve ser usado os DAOs corretamente.
  */
 
-class DAO
+abstract class DAO
 {
     protected $tabela = "";
     protected $conexao;
