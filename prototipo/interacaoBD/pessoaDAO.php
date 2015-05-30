@@ -19,4 +19,35 @@ class pessoaDAO extends DAO {
         return $result;
     }
 
+    /**
+     * Verifica se login está correto
+     * @param $senha
+     * @param $login
+     * @return bool
+     */
+    public function verificaLogin($senha, $login) {
+        $senha = (int) $senha;
+        $sql = "SELECT * FROM " . $this->tabela . " WHERE cpf = " . $senha . " AND email = '" . $login . "'";
+        $result = mysqli_query($this->conexao, $sql);
+
+        $resultados = mysqli_num_rows($result);
+        return $resultados > 0 ? true : false;
+    }
+
+    /**
+     * Verifica o tipo da pessoa usando o CPF
+     * @param $cpf
+     * @return int
+     */
+    public function verificaNivelPessoa($cpf) {
+        $sql = "SELECT id_tipo_pessoa FROM " . $this->tabela . " WHERE cpf = " . $cpf;
+        $result = mysqli_query($this->conexao, $sql);
+
+        while($row = mysqli_fetch_assoc($result)) {
+            return $row['id_tipo_pessoa'];
+        }
+
+        return -1;
+    }
+
 }

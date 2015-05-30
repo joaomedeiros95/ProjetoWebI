@@ -1,3 +1,5 @@
+<?php include_once('../config.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +13,10 @@
 
 <div class="container">
 
-    <form class="form-signin" method="post" action="controle/validaLogin.php">
+    <form class="form-signin" method="post" action="controle/controleLogin.php">
         <h2 class="form-signin-heading text-center">Hospital Web</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Login" name="Login" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" name="Senha" required>
 
         <div class="checkbox">
             <label>

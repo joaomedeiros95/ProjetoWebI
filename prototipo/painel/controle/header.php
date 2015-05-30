@@ -1,4 +1,16 @@
-<?php include_once('../../config.php') ?>
+<?php
+
+    include_once('../../config.php');
+
+    session_start();
+    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)) {
+        unset($_SESSION['login']);
+        unset($_SESSION['senha']);
+        header('location:../login.php');
+    }
+
+    $logado = $_SESSION['login'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +40,7 @@
             <li><a href="#">Perfil</a></li>
             <li><a href="#">Registrar Ponto</a></li>
             <li><a href="#">Ajuda</a></li>
+              <li><a href="../logout.php">Sair</a></li>
           </ul>
         </div>
       </div>
