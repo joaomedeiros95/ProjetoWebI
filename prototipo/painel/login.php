@@ -11,7 +11,7 @@
 
 <div class="container">
 
-    <form class="form-signin" method="post" action="validaLogin.php">
+    <form class="form-signin" method="post" action="controle/validaLogin.php">
         <h2 class="form-signin-heading text-center">Hospital Web</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Login" required autofocus>

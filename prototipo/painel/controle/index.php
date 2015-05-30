@@ -11,8 +11,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="#">Cadastro Paciente</a></li>
-            <li><a href="#">Cadastro Funcionário</a></li>
+            <li><a href="cadastroGenerico.php">Cadastro Pessoa</a></li>
             <li><a href="#">Cadastro Procedimento</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -31,22 +30,22 @@
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-            	<img src="../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
+            	<img src="../../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
               <h4>Pacientes</h4>
               <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$PACIENTE); ?> Pacientes</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-            	<img src="../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
+            	<img src="../../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
               <h4>Médicos</h4>
               <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$MEDICO); ?> Médicos</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-            	<img src="../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
+            	<img src="../../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
               <h4>Enfermeiros</h4>
               <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$ENFERMEIRA); ?> Enfermeiros</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-            	<img src="../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
+            	<img src="../../img/avatar.png" class="img-responsive center-block" width="100px" height="100px" />
               <h4>Procedimentos Marcadas</h4>
               <span class="text-muted">X Procedimentos</span>
             </div>
@@ -107,4 +106,4 @@
       </div>
     </div>
 
-<?php include_once('../footer.php') ?>
+<?php include_once('../../footer.php') ?>

@@ -65,6 +65,12 @@ include '../config.php';
                 <td/>
                 <td><input class="input-sm form-control" type="text" name="telefone" required></td>
             </tr>
+            <tr>
+                <td><label for="plano_saude">Plano de Saúde</label><td/>
+                <td>
+                    <input class="input-sm form-control" type="text" name="plano_saude">
+                </td>
+            </tr>
 
             <tr>
 

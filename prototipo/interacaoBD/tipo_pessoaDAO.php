@@ -13,4 +13,5 @@ class tipo_pessoaDAO extends DAO {
     public static $ATENDENTE = 3;
     public static $PACIENTE = 4;
     public static $ADMINISTRADOR = 5;
+
 }
