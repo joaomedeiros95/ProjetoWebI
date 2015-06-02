@@ -73,14 +73,10 @@ include '../config.php';
             </tr>
 
             <tr>
-
-                <td class="">
+                <td class="" colspan="2">
                     <button class="btn btn-group cor " type="submit">Enviar</button>
+					<button class="btn btn-group cor " type="reset">Limpar</button>
                 </td>
-                <td class="">
-                    <button class="btn btn-group cor " type="reset">Limpar</button>
-                </td>
-
             </tr>
 
 

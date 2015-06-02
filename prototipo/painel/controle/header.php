@@ -38,7 +38,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Painel</a></li>
             <li><a href="#">Perfil</a></li>
-            <li><a href="#">Registrar Ponto</a></li>
+            <li><a href="registrarPonto.php">Registrar Ponto</a></li>
             <li><a href="#">Ajuda</a></li>
               <li><a href="../logout.php">Sair</a></li>
           </ul>

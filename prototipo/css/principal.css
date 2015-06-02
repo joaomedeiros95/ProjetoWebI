@@ -235,8 +235,7 @@
     margin-top: 5%;
     margin-left: 10%;
 }
-.cor{
-    
+.cor {
     background-color: #cf1717;
 }
 
@@ -248,4 +247,18 @@
 
 .noVisible {
     display: none;
+}
+
+.form-ponto {
+    width: 40%;
+    float: left;
+}
+
+.ponto-dia {
+    width: 50%;
+    float: right;
+}
+
+.ponto {
+	margin-top: 20px;
 }

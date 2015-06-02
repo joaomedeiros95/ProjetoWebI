@@ -57,10 +57,10 @@ abstract class DAO
      */
     public function inserir($campos, $valores) // funçao de inserçao, campos e seus respectivos valores como parametros
     {
-        $sql_ins = "INSERT INTO " . $this->tabela . " ($campos) VALUES ($valores)";
+        $sql_ins = "INSERT INTO " . $this->tabela . " (" . $campos . ") VALUES (" . $valores . ")";
         $ins = mysqli_query($this->conexao, $sql_ins);
         if (!$ins) {
-            die ("Ocorreu um erro na inserçao: " . mysql_error());
+            die ("Ocorreu um erro na inserçao: " . $sql_ins);
         }
     }
 
@@ -73,14 +73,14 @@ abstract class DAO
      */
     public function atualizar($camposvalores, $where = NULL) {
         if ($where) {
-            $sql_upd = "UPDATE  " . $this->tabela . " SET $camposvalores WHERE $where";
+            $sql_upd = "UPDATE  " . $this->tabela . " SET " . $camposvalores . " WHERE " . $where;
         } else {
             $sql_upd = "UPDATE  " . $this->tabela . " SET $camposvalores";
         }
 
         $upd = mysqli_query($this->conexao, $sql_upd);
         if (!$upd) {
-            die ("Ocorreu um erro na atualizaçao: " . mysql_error());
+            die ("Ocorreu um erro na atualizaçao: " . $sql_upd);
         }
     }
 
@@ -92,14 +92,14 @@ abstract class DAO
      */
     public function excluir($where = NULL) {
         if ($where) {
-            $sql_del = "DELETE FROM " . $this->tabela . " WHERE $where";
+            $sql_del = "DELETE FROM " . $this->tabela . " WHERE " . $where;
         } else {
             $sql_del = "DELETE FROM " . $this->tabela;
         }
         $del = mysqli_query($this->conexao, $sql_del);
 
         if (!$del) {
-            die ("Ocorreu um erro na remoção: " . mysql_error());
+            die ("Ocorreu um erro na remoção: " . $sql_del);
         }
     }
 

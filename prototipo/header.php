@@ -1,3 +1,5 @@
+<?php include_once('config.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +15,10 @@
   <div class="container">
     <div class="header">
       <nav>
-        <ul class="nav masthead-nav">
+        <ul class="nav masthead-nav menu">
           <li class="active"><a href="index.php">Home</a></li>
-          <li><a href="sobre.php">Sobre</a></li>
-          <li><a href="contatos.php">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
           <li><a href="painel/login.php">Login</a></li>
           <li><a href="painel/cadastro.php">Cadastro</a></li>
         </ul>
