@@ -12,7 +12,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="cadastroGenerico.php">Cadastro Pessoa</a></li>
-            <li><a href="#">Cadastro Procedimento</a></li>
+            <li><a href="cadastroProcedimento.php">Cadastro Procedimento</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">Consultas</a></li>
@@ -63,42 +63,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>25/03/2015 - 14:00</td>
-                  <td>Eduardo</td>
-                  <td>Gustavo</td>
-                  <td>Revisão</td>
-                </tr>
-                <tr>
-                  <td>25/03/2015 - 14:00</td>
-                  <td>Eduardo</td>
-                  <td>Gustavo</td>
-                  <td>Revisão</td>
-                </tr>
-                <tr>
-                  <td>25/03/2015 - 14:00</td>
-                  <td>Eduardo</td>
-                  <td>Gustavo</td>
-                  <td>Revisão</td>
-                </tr>
-                <tr>
-                  <td>25/03/2015 - 14:00</td>
-                  <td>Eduardo</td>
-                  <td>Gustavo</td>
-                  <td>Revisão</td>
-                </tr>
-                <tr>
-                  <td>25/03/2015 - 14:00</td>
-                  <td>Eduardo</td>
-                  <td>Gustavo</td>
-                  <td>Revisão</td>
-                </tr>
-                <tr>
-                  <td>25/03/2015 - 14:00</td>
-                  <td>Eduardo</td>
-                  <td>Gustavo</td>
-                  <td>Revisão</td>
-                </tr>
+                <?php 
+					include_once('quadroConsultas.php');
+				?>
               </tbody>
             </table>
           </div>

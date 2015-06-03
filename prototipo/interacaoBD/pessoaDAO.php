@@ -19,6 +19,13 @@ class pessoaDAO extends DAO {
         return $result;
     }
 
+    public function findByNameTipo($nome, $tipoPessoa) {
+        $sql = "SELECT * FROM " . $this->tabela . " WHERE nome LIKE '%{$nome}%' AND id_tipo_pessoa = " . $tipoPessoa;
+        $result = mysqli_query($this->conexao, $sql);
+
+        return $result;
+    }
+
     /**
      * Verifica se login está correto
      * @param $senha
