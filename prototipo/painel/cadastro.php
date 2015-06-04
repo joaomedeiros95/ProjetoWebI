@@ -10,77 +10,53 @@ include '../config.php';
 </head>
 <body class="login-body">
 
-<div class="imgForm form-group">
+<div class="localForm container">
+    <form class="form-horizontal" method="post" action="controleCadastro.php">
+        <h2 class="form-horizontal-heading text-center">Cadastro Paciente</h2>
 
-    <img src="../img/sgh.jpg">
+        <div class="form-group">
+            <label for="Pnome">Nome</label>
+            <input class="input-sm form-control " type="text" name="Pnome">
+        </div>
+        <div class="form-group">
+            <label for="Snome">Sobrenome</label>
+            <input class="input-sm form-control" type="text" name="Snome">
+        </div>
+        <div class="form-group">
+            <label for="dtNascimento">Data de Nascimento</label>
+            <input class="input-sm form-control" type="text" name="dtnascimento" onkeyup="formatarData(this)" maxlength="10" required>
+        </div>
+        <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input class="input-sm form-control" type="text" name="cpf" onkeyup="return formatarInteiros(this);" maxlength="11" required>
+        </div>
+        <div class="form-group">
+            <label for="rg">RG</label>
+            <input class="input-sm form-control" type="text" name="rg" onkeyup="return formatarInteiros(this);" maxlength="11" required>
+        </div>
+        <div class="form-group">
+            <label for="rua">Rua</label>
+            <input class="input-sm form-control" type="text" name="rua">
+        </div>
+        <div class="form-group">
+            <label for="cidadeEstado">Cidade/Estado</label>
+            <input class="input-sm form-control" type="text" name="cidadeEstado" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="input-sm form-control" type="text" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input class="input-sm form-control" type="text" name="telefone" required>
+        </div>
+        <div class="form-group">
+            <label for="plano_saude">Plano de Saúde</label>
+            <input class="input-sm form-control" type="text" name="plano_saude">
+        </div>
 
-</div>
-
-<div class="localForm">
-    <form class="list-group" method="post" action="controleCadastro.php">
-        <table class="">
-
-            <tr>
-                <td><label for="Pnome">Nome</label>
-                <td/>
-                <td><input class="input-sm form-control " type="text" name="Pnome"></td>
-            </tr>
-            <tr>
-                <td><label for="Snome">Sobrenome</label>
-                <td/>
-                <td><input class="input-sm form-control" type="text" name="Snome"></td>
-            </tr>
-            <tr>
-                <td><label for="dtNascimento">Data de Nascimento</label>
-                <td/>
-                <td><input class="input-sm form-control" type="text" name="dtnascimento" onkeyup="formatarData(this)" maxlength="10" required></td>
-            </tr>
-            <tr>
-                <td><label for="cpf">CPF</label>
-                <td/>
-                <td><input class="input-sm form-control" type="text" name="cpf" onkeyup="return formatarInteiros(this);" maxlength="11" required></td>
-            </tr>
-            <tr>
-                <td><label for="rg">RG</label>
-                <td/>
-                <td><input class="input-sm form-control" type="text" name="rg" onkeyup="return formatarInteiros(this);" maxlength="11" required></td>
-            </tr>
-            <tr>
-                <td><label for="rua">Rua</label>
-                <td/>
-                <td><input class="input-sm form-control" type="text" name="rua"></td>
-            </tr>
-            <tr>
-                <td><label for="cidadeEstado">Cidade/Estado</label>
-                <td/>
-                <td><input class="input-sm form-control" type="text" name="cidadeEstado" required></td>
-            </tr>
-            <tr>
-                <td><label for="email">Email</label>
-                <td/>
-                <td><input class="input-sm form-control" type="text" name="email" required></td>
-            </tr>
-            <tr>
-                <td><label for="telefone">Telefone</label>
-                <td/>
-                <td><input class="input-sm form-control" type="text" name="telefone" required></td>
-            </tr>
-            <tr>
-                <td><label for="plano_saude">Plano de Saúde</label><td/>
-                <td>
-                    <input class="input-sm form-control" type="text" name="plano_saude">
-                </td>
-            </tr>
-
-            <tr>
-                <td class="" colspan="2">
-                    <button class="btn btn-group cor " type="submit">Enviar</button>
-					<button class="btn btn-group cor " type="reset">Limpar</button>
-                </td>
-            </tr>
-
-
-        </table>
+        <button class="btn btn-danger " type="submit">Enviar</button>
+        <button class="btn btn-danger " type="reset">Limpar</button>
     </form>
 </div>
 <div class="btn-default"></div>
