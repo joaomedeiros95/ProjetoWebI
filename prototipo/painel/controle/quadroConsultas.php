@@ -12,7 +12,7 @@ while($row = mysqli_fetch_assoc($resultados)) {
 
     $retorno .= '{"HoraEntrada":"' . $row['hora_entrada'] . '",';
     $retorno .= '"Paciente":"' . $row['paciente'] . '",';
-    $retorno .= '"Medico":"' . $row['medico'] . '",';
+    $retorno .= '"Medico":"' . ($row['medico'] != null ? $row['medico'] : $row['enfermeira']) . '",';
     $retorno .= '"TipoProcedimento":"' . ($row['tipo_procedimento'] != null ? $row['tipo_procedimento'] : $row['tipo_exame']) . '"}';
 }
 

@@ -11,22 +11,7 @@ function contarPessoasPorTipoPessoa($tipo_pessoa)
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li><a href="cadastroGenerico.php">Cadastro Pessoa</a></li>
-                <li><a href="marcarProcedimento.php">Marcar Procedimento</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">Consultas</a></li>
-                <li><a href="CadastroExames.php">Cadastro de Exames</a></li>
-                <li><a href="CadastrarProcedimento.php">Cadastro de Procedimentos</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">Controle estoque</a></li>
-                <li><a href="ControleHorario.php">Controle horário</a></li>
-                <li><a href="">Controle plantões</a></li>
-            </ul>
-        </div>
+        <?php include_once('navbar.php'); ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Nome do Hospital</h1>
 
@@ -65,7 +50,7 @@ function contarPessoasPorTipoPessoa($tipo_pessoa)
                     <tr>
                         <th>Data</th>
                         <th>Paciente</th>
-                        <th>Médico</th>
+                        <th>Médico/Enfermeiro</th>
                         <th>Tipo de Procedimento</th>
                     </tr>
                     </thead>

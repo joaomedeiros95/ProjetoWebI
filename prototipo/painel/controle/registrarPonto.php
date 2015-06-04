@@ -53,32 +53,34 @@ function mostrarPontosDia() {
 
 ?>
 
-<div class="container ponto">
+<div class="container ponto row">
+    <?php include_once('navbar.php') ?>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ">
+        <form class="form-ponto" method="post" action="controlePonto.php">
+            <div class="form-group">
+                <label for="hora_entrada">Entrada: </label>
+                <?php echo '<input type="text" id="hora_entrada" class="form-control" name="hora_entrada" value = "' . ($estado == 1 ? $hentrada : $horaentrada) . '">'; ?>
+            </div>
+            <div class="form-group">
+                <label for="hora_saida">Saída: </label>
+                <?php echo '<input type="text" id="hora_saida" class="form-control" name="hora_saida" value = "' . ($estado == 1 ? $horaentrada : null) . '">' ?>
+            </div>
+            <?php echo '<input type="hidden" name = "estado" value="' . $estado . '">'; ?>
+            <?php echo '<input type="hidden" name = "codigo" value="' . $codigo . '">'; ?>
 
-    <form class="form-ponto" method="post" action="controlePonto.php">
-		<div class="form-group">
-			<label for="hora_entrada">Entrada: </label>
-        	<?php echo '<input type="text" id="hora_entrada" class="form-control" name="hora_entrada" value = "' . ($estado == 1 ? $hentrada : $horaentrada) . '">'; ?>
-		</div>
-		<div class="form-group">
-			<label for="hora_saida">Saída: </label>
-			<?php echo '<input type="text" id="hora_saida" class="form-control" name="hora_saida" value = "' . ($estado == 1 ? $horaentrada : null) . '">' ?>
-		</div>
-        <?php echo '<input type="hidden" name = "estado" value="' . $estado . '">'; ?>
-        <?php echo '<input type="hidden" name = "codigo" value="' . $codigo . '">'; ?>
+            <button class="btn btn-danger" type="submit">Registrar Ponto</button>
+        </form>
 
-        <button class="btn btn-danger" type="submit">Registrar Ponto</button>
-    </form>
-
-    <div class = "ponto-dia">
-        <table class="table">
-			<caption><b>Ponto do Dia</b></caption>
-			<tr>
-				<th>Entrada</th>
-				<th>Saída</th>
-			</tr>
-			<?php echo mostrarPontosDia(); ?>
-        </table>
+        <div class = "ponto-dia">
+            <table class="table">
+                <caption><b>Ponto do Dia</b></caption>
+                <tr>
+                    <th>Entrada</th>
+                    <th>Saída</th>
+                </tr>
+                <?php echo mostrarPontosDia(); ?>
+            </table>
+        </div>
     </div>
 
 </div>

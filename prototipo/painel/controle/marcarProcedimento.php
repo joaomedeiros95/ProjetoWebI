@@ -28,9 +28,9 @@ function selecioneTipoProcedimento() {
 
 ?>
 
-<div class="container">
-
-    <form class="" method="post" action="controleMarcarProcedimento.php">
+<div class="container row">
+    <?php include_once('navbar.php') ?>
+    <form class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 " method="post" action="controleMarcarProcedimento.php">
         <div class="checkbox">
             <label>
                 <input id="consulta" type="radio" name="tipoProcedimento" value="<?php echo tipo_procedimentoDAO::$CONSULTA; ?>" checked> Consulta
