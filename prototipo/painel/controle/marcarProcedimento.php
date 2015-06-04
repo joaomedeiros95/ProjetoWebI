@@ -88,7 +88,7 @@ function selecioneTipoProcedimento() {
             </select>
         </div>
 
-        <button class="btn btn-danger" type="submit">Registrar Ponto</button>
+        <button class="btn btn-danger" type="submit">Marcar Procedimento</button>
     </form>
 
 </div>
