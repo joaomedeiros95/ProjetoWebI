@@ -6,7 +6,10 @@ include_once('header.php');
 <div class="container row">
     <?php include_once('navbar.php') ?>
 	
-	<form class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 " method="post" action="ControlePlantao.php">
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ">
+		
+	
+	<form  method="post" action="ControlePlantao.php">
       <h2> Cadastre Aqui um Plantão	</h2>
 		<br>
         <div class="form-group">
@@ -22,7 +25,48 @@ include_once('header.php');
        
 		
 		<button class="btn btn-danger" type="submit">Cadastrar Plantão</button>
+		<br>
+		<br>
     </form>
 	
+			<div  ng-app="PlantaoAPP" ng-controller="PlantaoControl">
+            <h2 class="sub-header">Plantões Cadastrados</h2>
+            <input type="text" placeholder="Pesquise Pelo CPF" ng-model="filtroPaciente.CPF">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Especialidade </th>
+                    <th>Entrada </th>
+                    <th>Saída</th>
+                    <th>CPF</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in consultas | filter:filtroPaciente">
+                    <td>{{ x.Especialidade }}</td>
+                    <td>{{ x.Entrada }}</td>
+                    <td>{{ x.Saida }}</td>
+                    <td>{{ x.CPF }}</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+		
+		
+		
+		
+		
+	</div>
 	
 </div>
+
+<?php include_once('../../footer.php'); ?>
+<script>
+    var app = angular.module('PlantaoAPP', []);
+    app.controller('PlantaoControl', function($scope, $http) {
+        $http.get("http://www.joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/DadosPlantao.php")
+            .success(function (response) {$scope.consultas = response.records;});
+    });
+</script>
