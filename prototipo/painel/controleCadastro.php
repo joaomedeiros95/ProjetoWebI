@@ -49,4 +49,5 @@ if(isset($_REQUEST['id_tipo_pessoa'])) {
 $pessoa = new pessoaDAO();
 $pessoa->inserir($campos, $valores);
 
-echo $nome . 'foi inserido com sucesso';
+ 
+echo '<script>alert("' . $nome . ' cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/cadastroGenerico.php");</script>';

@@ -14,5 +14,14 @@ class sistema_pontoDAO extends DAO {
 
         return $result;
     }
+	
+	function getAllJoinPessoa() {
+		$sql = "SELECT sp.hentrada, sp.hsaida, sp.id_pessoa, p.nome FROM " . $this->tabela . " sp ";
+		$sql .= "JOIN pessoa p ON sp.id_pessoa = p.cpf";
+		
+		$result = mysqli_query($this->conexao, $sql);
+
+        return $result;
+	}
 
 }
