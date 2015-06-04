@@ -9,8 +9,9 @@
         <li><a href="CadastrarProcedimento.php">Cadastro de Procedimentos</a></li>
     </ul>
     <ul class="nav nav-sidebar">
-        <li><a href="">Controle estoque</a></li>
+        <li><a href="controleEstoque.php">Controle estoque</a></li>
         <li><a href="ControleHorario.php">Controle horário</a></li>
+		<li><a href="CadastrarPlantao.php">Cadastrar Plantão</a></li>
         <li><a href="">Controle plantões</a></li>
     </ul>
 </div>

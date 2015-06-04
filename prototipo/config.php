@@ -34,6 +34,8 @@
 	include_once(getPHP(DAO) . '/procedimentoDAO.php');
     include_once(getPHP(DAO) . '/tipo_procedimentoDAO.php');
     include_once(getPHP(DAO) . '/tipo_exameDAO.php');
+    include_once(getPHP(DAO) . '/plantaoDAO.php');
+    include_once(getPHP(DAO) . '/materialDAO.php');
 
     include_once(getPHP(CONEXAO) . '/conectaBD.php');
     include_once(getPHP(CONEXAO) . '/desconectBD.php');
