@@ -32,11 +32,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hospital Web</a>
+          <a class="navbar-brand" href="index.php">Hospital Web</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Painel</a></li>
+            <li><a href="index.php">Painel</a></li>
             <li><a href="#">Perfil</a></li>
             <li><a href="registrarPonto.php">Registrar Ponto</a></li>
             <li><a href="#">Ajuda</a></li>

@@ -2,7 +2,7 @@
  * Created by joao on 03/06/15.
  */
 
-function showHint(str, campo) {
+function showHint(str, campo, tipoPessoa) {
     var campoSuggestion = "suggestion_".concat(campo);
     if (str.length == 0) {
         document.getElementById(campo).value = "";
@@ -16,7 +16,7 @@ function showHint(str, campo) {
                 document.getElementById(campoSuggestion).style.display = "block";
             }
         }
-        xmlhttp.open("GET", "autoCompletePessoa.php?query=" + str + "&campo=" + campo, true);
+        xmlhttp.open("GET", "autoCompletePessoa.php?query=" + str + "&campo=" + campo + "&tipo_pessoa=" + tipoPessoa, true);
         xmlhttp.send();
     }
 }

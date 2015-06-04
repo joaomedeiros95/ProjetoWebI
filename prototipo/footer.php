@@ -6,6 +6,7 @@
         echo '<script src= ' . getResource(JQUERY) . '></script>';
         echo '<script src= ' . getResource(HOSPITALWEBJS) . '></script>';
         echo '<script src= ' . getResource(BOOTSTRAPJS) . '></script>';
+        echo '<script src= ' . getResource(ANGULARJS) . '></script>';
     ?>
 
 </body>

@@ -1,16 +1,22 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+include_once('../../config.php');
 
 $procedimento = new procedimentoDAO();
 $resultados = $procedimento->findAllAfterNow();
 
 $retorno = "";
 while($row = mysqli_fetch_assoc($resultados)) {
-	$retorno .= "<tr><td>";
-	$retorno .= $row['hora_entrada'] . "</td>";
-	$retorno .= "<td>" . $row['paciente'] . "</td>";
-	$retorno .= "<td>" . $row['medico'] . "</td>";
-	$retorno .= "<td>" . $row['tipo_procedimento'] . "</td>";
-	$retorno .= "</tr>";
+    if($retorno != "") {$retorno .= ",";}
+
+    $retorno .= '{"HoraEntrada":"' . $row['hora_entrada'] . '",';
+    $retorno .= '"Paciente":"' . $row['paciente'] . '",';
+    $retorno .= '"Medico":"' . $row['medico'] . '",';
+    $retorno .= '"TipoProcedimento":"' . ($row['tipo_procedimento'] != null ? $row['tipo_procedimento'] : $row['tipo_exame']) . '"}';
 }
 
+$retorno = '{"records":[' . $retorno .']}';
+
 echo $retorno;
+

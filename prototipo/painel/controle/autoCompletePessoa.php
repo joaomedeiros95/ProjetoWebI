@@ -11,9 +11,10 @@ include_once('../../config.php');
 if (isset($_REQUEST['query']) && isset($_REQUEST['campo'])) {
     $query = $_REQUEST['query'];
     $campo = $_REQUEST['campo'];
+    $tipoPessoa = $_REQUEST['tipo_pessoa'];
 
     $pessoa = new pessoaDAO();
-    $result = $pessoa->findByNameTipo($query, tipo_pessoaDAO::$PACIENTE);
+    $result = $pessoa->findByNameTipo($query, $tipoPessoa);
 
     $array = array();
     $id = array();

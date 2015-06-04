@@ -18,6 +18,7 @@
     define('JQUERY', JS . '/jquery-2.1.4.min.js');
     define('BOOTSTRAPJS', BSJS . '/bootstrap.min.js');
     define('AUTOCOMPLETEJS', JS . '/autocomplete.js');
+    define('ANGULARJS', JS . '/angular.min.js');
 
     /* Varíaveis do BD */
     define('HOST', 'localhost');
@@ -31,6 +32,8 @@
     include_once(getPHP(DAO) . '/tipo_pessoaDAO.php');
     include_once(getPHP(DAO) . '/sistema_pontoDAO.php');
 	include_once(getPHP(DAO) . '/procedimentoDAO.php');
+    include_once(getPHP(DAO) . '/tipo_procedimentoDAO.php');
+    include_once(getPHP(DAO) . '/tipo_exameDAO.php');
 
     include_once(getPHP(CONEXAO) . '/conectaBD.php');
     include_once(getPHP(CONEXAO) . '/desconectBD.php');
