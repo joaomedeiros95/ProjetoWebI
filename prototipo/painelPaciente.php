@@ -50,38 +50,41 @@
                             
                             <label class="img-responsive glyphicon glyphicon-calendar" ></label>
                             <h4>Agenda</h4>
-                            <span class="text-muted">Something else</span>
+                            <span class="text-muted">Agendamento de consultas</span>
                         </div>
                         
                         <div id="b" onclick="selectButton('b')" onmouseover="buttonColor(1,'b')" onmouseout="buttonColor(2,'b')" class="col-xs-6 col-sm-3 placeholder" >
                             
                             <label class="img-responsive glyphicon glyphicon-folder-open"  data-holder-rendered="true"></label>
                             <h4>Consultas</h4>
-                            <span class="text-muted">Something else</span>
+                            <span class="text-muted">Suas consultas</span>
                         </div>
                         
                         <div id="c"   onclick="selectButton('c')" onmouseover="buttonColor(1,'c')" onmouseout="buttonColor(2,'c')" class="col-xs-6 col-sm-3 placeholder" >
                             
                             <label class="img-responsive glyphicon glyphicon-paste"   data-holder-rendered="true"></label>
                             <h4>Exames</h4>
-                            <span class="text-muted">Something else</span>
+                            <span class="text-muted">Resultado de exames</span>
                         </div>
-                       
-                        
+                   
                     </div>
 
-                  
-                    
+        
                     <section id="conteudo" class="table-responsive">
                         
                           <h2 id="menuSelect" class="sub-header"></h2>
-                        
-                          <div id="inf" class="nav-justified">
-                              
-                              
+                        			
+								
+                          <div id="agenda" class="">
+                             
+                          </div>
+						  <div id="consultas" class="">
+                             
+                          </div>
+						  <div id="exames" class="">
+                             
                           </div>
                    
-                        
                     </section>
                 </div>
             </div>

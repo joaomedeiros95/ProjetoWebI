@@ -9,6 +9,7 @@
 class procedimentoDAO extends DAO {
 
 	public function findAllAfterNow() {
+		
 		$sql = "SELECT p.hentrada as hora_entrada, pa.nome as paciente, me.nome as medico, ef.nome as enfermeira, tp.descricao as tipo_procedimento, te.nome as tipo_exame FROM " . $this->tabela . " p ";
 		$sql .= "JOIN pessoa pa ON p.id_paciente = pa.cpf ";
 		$sql .= "LEFT JOIN pessoa me ON p.id_medico = me.cpf ";
@@ -21,4 +22,16 @@ class procedimentoDAO extends DAO {
 		return $result;
 	}
 	
+	//public function procuraExame($id_paciente){}
+	
+	public function consultasPaciente($id_paciente){
+		
+		
+		$sql = "SELECT nome, Hentrada, descricao";
+		$sql .=	"FROM procedimento";
+		$sql .=	"INNER JOIN tipo_procedimento";
+		$sql .=	"WHERE procedimento.id_tipo_procedimento = tipo_procedimento.id_tipo_procedimento";
+		
+		
+	}
 }
