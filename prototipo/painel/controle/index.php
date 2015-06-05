@@ -7,6 +7,13 @@ function contarPessoasPorTipoPessoa($tipo_pessoa)
     return mysqli_num_rows($pessoa->selecionaTodosOsPacientes($tipo_pessoa));
 }
 
+function contarProcedimentos() {
+	$procedimento = new procedimentoDAO();
+	$result = $procedimento->findAllAfterNow();
+	
+	return mysqli_num_rows($result);
+}
+
 ?>
 
 <div class="container-fluid">
@@ -17,27 +24,27 @@ function contarPessoasPorTipoPessoa($tipo_pessoa)
 
             <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="../../img/avatar.png" class="img-responsive center-block" width="100px" height="100px"/>
+                    <img src="../../img/paciente.png" class="img-responsive center-block" width="100px" height="100px"/>
                     <h4>Pacientes</h4>
                     <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$PACIENTE); ?>
                         Pacientes</span>
                 </div>
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="../../img/avatar.png" class="img-responsive center-block" width="100px" height="100px"/>
+                    <img src="../../img/medico.png" class="img-responsive center-block" width="100px" height="100px"/>
                     <h4>Médicos</h4>
                     <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$MEDICO); ?>
                         Médicos</span>
                 </div>
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="../../img/avatar.png" class="img-responsive center-block" width="100px" height="100px"/>
+                    <img src="../../img/enfermeira.png" class="img-responsive center-block" width="100px" height="100px"/>
                     <h4>Enfermeiros</h4>
                     <span class="text-muted"><?php echo contarPessoasPorTipoPessoa(tipo_pessoaDAO::$ENFERMEIRA); ?>
                         Enfermeiros</span>
                 </div>
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="../../img/avatar.png" class="img-responsive center-block" width="100px" height="100px"/>
+                    <img src="../../img/procedimento.png" class="img-responsive center-block" width="100px" height="100px"/>
                     <h4>Procedimentos Marcadas</h4>
-                    <span class="text-muted">X Procedimentos</span>
+                    <span class="text-muted"><?php echo contarProcedimentos(); ?> Procedimentos</span>
                 </div>
             </div>
 

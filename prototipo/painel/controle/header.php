@@ -37,7 +37,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.php">Painel</a></li>
-            <li><a href="#">Perfil</a></li>
+            <li><a href="perfil.php">Meu Perfil</a></li>
             <li><a href="registrarPonto.php">Registrar Ponto</a></li>
             <li><a href="#">Ajuda</a></li>
               <li><a href="../logout.php">Sair</a></li>
