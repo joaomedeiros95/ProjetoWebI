@@ -37,6 +37,11 @@ if($_REQUEST['tipo'] == 1) {
     }
 
     $retorno = '{"records":"true"}';
+} else if ($_REQUEST['tipo'] == 3) {
+	$id = $_REQUEST['id'];
+	$material->excluir("codigo = " . $id);
+	
+	$retorno = '{"records":"true"}';
 }
 
 echo $retorno;

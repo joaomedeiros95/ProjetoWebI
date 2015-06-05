@@ -40,6 +40,12 @@ include_once('header.php');
                             <span class="glyphicon glyphicon-pencil"></span>  Editar
                         </button>
                     </td>
+					
+					<td>
+						<button class="btn btn-danger" ng-click="remover(material.id)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+					</td>
                 </tr>
 
             </tbody>
@@ -177,24 +183,19 @@ include_once('header.php');
                 }
             }
         };
-
-        /*$scope.$watch('passw1',function() {$scope.test();});
-        $scope.$watch('passw2',function() {$scope.test();});
-        $scope.$watch('fName', function() {$scope.test();});
-        $scope.$watch('lName', function() {$scope.test();});
-
-        $scope.test = function() {
-            if ($scope.passw1 !== $scope.passw2) {
-                $scope.error = true;
-            } else {
-                $scope.error = false;
+		
+		$scope.remover = function(campo) {
+			for(i = 0; i < $scope.materiais.length; i++) {
+                if($scope.materiais[i].id == campo) {
+					var res = confirm('Tem certeza que deseja excluir o material?' + campo);
+					if(res) {
+						$scope.resposta = 'false';
+						var HTTP = $http.get("http://www.joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/editarEstoque.php?tipo=3&id=" + campo)
+							.success(function (response) {$scope.resposta = response.records; $scope.reiniciar()});
+					}
+                }
             }
-            $scope.incomplete = false;
-            if ($scope.edit && (!$scope.fName.length ||
-                !$scope.lName.length ||
-                !$scope.passw1.length || !$scope.passw2.length)) {
-                $scope.incomplete = true;
-            }
-        };*/
+		}
+
     });
 </script>
