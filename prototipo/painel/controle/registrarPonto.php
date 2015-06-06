@@ -53,9 +53,9 @@ function mostrarPontosDia() {
 
 ?>
 
-<div class="container ponto row">
+<div class="container-fluid ponto row">
     <?php include_once('navbar.php') ?>
-    <div class="col-lg-10 col-lg-offset-2">
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
         <form class="form-ponto" method="post" action="controlePonto.php">
             <div class="form-group">
                 <label for="hora_entrada">Entrada: </label>

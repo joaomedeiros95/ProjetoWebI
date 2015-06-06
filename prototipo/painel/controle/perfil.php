@@ -3,7 +3,7 @@
 include_once('header.php');
 
 ?>
-<div class="container row">
+<div class="container-fluid row">
     <?php include_once('navbar.php') ?>
 	
 	

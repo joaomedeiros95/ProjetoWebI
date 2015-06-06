@@ -3,7 +3,7 @@
 include_once('header.php');
 
 ?>
-<div class="container row " ng-app="estoque" ng-controller="estoqueControle">
+<div class="container-fluid row " ng-app="estoque" ng-controller="estoqueControle">
     <?php include_once('navbar.php') ?>
     <div class ="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ">
         <table class="table table-striped">
@@ -161,12 +161,18 @@ include_once('header.php');
         $scope.diminuirQuantidade = function(campo) {
             for(i = 0; i < $scope.materiais.length; i++) {
                 if($scope.materiais[i].id == campo) {
-                    var quantidade = parseInt($scope.materiais[i].Quantidade) - 1;
-                    $scope.resposta = 'false';
+                    if(parseInt($scope.materiais[i].Quantidade) > 0) {
+                        var quantidade = parseInt($scope.materiais[i].Quantidade) - 1;
+                        $scope.resposta = 'false';
 
-                    var HTTP = $http.get("http://www.joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/editarEstoque.php?tipo=1&id=" + campo + "&quantidade=" + quantidade)
-                        .success(function (response) {$scope.resposta = response.records;});
-                    $scope.materiais[i].Quantidade = quantidade;
+                        var HTTP = $http.get("http://www.joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/editarEstoque.php?tipo=1&id=" + campo + "&quantidade=" + quantidade)
+                            .success(function (response) {
+                                $scope.resposta = response.records;
+                            });
+                        $scope.materiais[i].Quantidade = quantidade;
+                    } else {
+                        alert('Quantidade não pode ser menor do que 0.');
+                    }
                 }
             }
         };

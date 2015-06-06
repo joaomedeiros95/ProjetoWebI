@@ -18,7 +18,7 @@
         if($tipo_pessoa != 4)
             header('location:index.php');
         else
-            echo 'Faltando implementar';
+            header('location:painelPaciente.php');
     } else {
         unset ($_SESSION['login']);
         unset ($_SESSION['senha']);

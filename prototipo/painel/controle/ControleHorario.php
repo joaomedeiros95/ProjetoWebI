@@ -1,7 +1,7 @@
 <?php
 include_once('header.php');
 ?>
-    <div class="container row">
+    <div class="container-fluid row">
         <?php include_once('navbar.php') ?>
         <div class="table-responsive col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 " ng-app="PontoAPP" ng-controller="PontoControl">
             <h2 class="sub-header">Horários Cadastrados no Ponto</h2>

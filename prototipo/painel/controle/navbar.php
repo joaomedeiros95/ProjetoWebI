@@ -1,4 +1,4 @@
-<div class="col-lg-2 sidebar">
+<div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
         <li><a href="cadastroGenerico.php">Cadastro Pessoa</a></li>
         <li><a href="marcarProcedimento.php">Marcar Procedimento</a></li>
