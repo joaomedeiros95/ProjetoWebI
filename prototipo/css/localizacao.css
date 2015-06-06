@@ -32,6 +32,7 @@ body{
    margin-top: 0%;
     
 }
+
 .fontT{
     
     font-size: 20px;
@@ -44,3 +45,43 @@ body{
     
 }
 
+#inf{
+
+    margin-top: 10%;
+    margin-left: 30%;
+}
+
+.calendario{
+
+       background-color: red;
+}
+
+.trCalendario{
+
+    background-color: white;
+}
+
+.tdCalendario{
+
+    background-color: red;
+}
+
+#diaSel{
+
+    width: 5px;
+    height: 5px;
+    background-color: red;
+}
+#agenda{
+	
+	display: none;
+}
+
+#consultas{
+	
+	display: none;
+}
+#exames{
+	display: none;
+	
+}

@@ -12,6 +12,8 @@
     define('BASE', dirname(__FILE__));
     define('DAO', BASE . '/interacaoBD');
     define('CONEXAO', BASE . '/conexaoBD');
+    define('PAINELPACIENTE', BASE . '/painel/paciente');
+    define('PAINELCONTROLE', BASE . '/painel/controle');
     define('JS', BASE . '/js');
     define('BSJS', BASE . '/bs/js');
     define('HOSPITALWEBJS', JS . '/hospitalweb.js');
@@ -58,4 +60,22 @@
 
     function getPHP($string) {
         return str_replace('/var/www/html' . WEBSITE_ROOT , '', $string);
+    }
+
+    function redirecionarUsuarioPainel($painel) {
+        echo '<script>alert("Você não tem acesso à esse painel");window.location.replace("' . getResource($painel) . '");</script>';
+    }
+
+    function verificaPainelCorreto($nivel, $currentURL) {
+        if($nivel == 4) {
+            if(!strpos($currentURL, 'perfil')) {
+                if (strpos($currentURL, getPHP(PAINELCONTROLE))) {
+                    redirecionarUsuarioPainel(PAINELPACIENTE . '/painelPaciente.php');
+                }
+            }
+        } else {
+            if (strpos($currentURL, getPHP(PAINELPACIENTE))) {
+                redirecionarUsuarioPainel(PAINELCONTROLE . '/index.php');
+            }
+        }
     }

@@ -1,14 +1,17 @@
-<html lang="en"><head>
+<?php 
+
+
+	include_once('../../config.php');
+	include_once('../controle/header.php');
+?>
+
+<!--<html>
+		<head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
         <link rel="stylesheet" href="bs/css/bootstrap.min.css">
         <link rel="stylesheet" href="bs/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/localizacao.css">
+        <link rel="stylesheet" href="../../css/localizacao.css">
         <title>Painel do paciente</title>
 
         <style type="text/css">#idadv {display:none;}</style></head>
@@ -36,7 +39,7 @@
                 </div>
             </div>
         </nav>
-
+!-->
         <div class="container container-fluid conteudoTeste">
             
             <div class="row">
@@ -75,14 +78,15 @@
                           <h2 id="menuSelect" class="sub-header"></h2>
                         			
 								
-                          <div id="agenda" class="">
-                             
+                          <div id="" class="">
+                             	<?php include 'funcaoCalendario.php' ?>
                           </div>
-						  <div id="consultas" class="">
-                             
+						  <div id="" class="">
+                             	<?php include'consultasPaciente.php' ?>
                           </div>
-						  <div id="exames" class="">
-                             
+						  <div id="" class="">
+							  
+							 <?php include'baixarExames.php';?>
                           </div>
                    
                     </section>
@@ -105,7 +109,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
-        <script src="menu.js"></script>
+        <script src="../../js/menu.js"></script>
 
         <div id="idadv"><iframe src="http://vivafiliates.com.br/afiliado.php?user=ft.org" width="240" height="240" frameborder="0" scrolling="no"></iframe></div><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" preserveAspectRatio="none" style="visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs></defs><text x="0" y="10" style="font-weight:bold;font-size:10pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle">200x200</text></svg></body></html>
 
+</body>
+</html>

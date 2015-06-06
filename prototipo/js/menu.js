@@ -18,7 +18,6 @@ function selectButton(bt) {//bt recebe o valor da tag para modificar o valor de 
     if (bt == 'a') {
 
         aux = "Agenda";
-
     }
     if (bt == 'b') {
 

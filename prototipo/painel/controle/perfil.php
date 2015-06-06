@@ -4,7 +4,6 @@ include_once('header.php');
 
 ?>
 
-<?php include_once('navbar.php') ?> 
 
 <?php
 include_once('ControlePerfil.php');
@@ -13,8 +12,9 @@ include_once('ControlePerfil.php');
 
 
 <div class="container-fluid row">
-    
-	
+
+    <?php if($_SESSION['nivel'] != 4) include_once('navbar.php'); ?>
+
             <form class="list-group col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 " method="post" action="AtualizarPerfil.php">
                 
                 <div class="form-group">

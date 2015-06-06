@@ -15,13 +15,15 @@
         $_SESSION['senha'] = $senha;
 
         $tipo_pessoa = $pessoa->verificaNivelPessoa($senha);
+        $_SESSION['nivel'] = $tipo_pessoa;
         if($tipo_pessoa != 4)
             header('location:index.php');
         else
-            header('location:painelPaciente.php');
+            header('location:../paciente/painelPaciente.php');
     } else {
         unset ($_SESSION['login']);
         unset ($_SESSION['senha']);
+        unset ($_SESSION['nivel']);
         header('location:../login.php');
     }
 

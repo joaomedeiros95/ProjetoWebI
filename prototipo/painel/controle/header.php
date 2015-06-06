@@ -6,8 +6,11 @@
     if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)) {
         unset($_SESSION['login']);
         unset($_SESSION['senha']);
+        unset($_SESSION['nivel']);
         header('location:../login.php');
     }
+
+    verificaPainelCorreto($_SESSION['nivel'], $_SERVER['REQUEST_URI']);
 
     $logado = $_SESSION['login'];
 ?>
@@ -32,13 +35,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Hospital Web</a>
+          <a class="navbar-brand" href="<?php if($_SESSION['nivel'] == 4) { echo getResource(PAINELPACIENTE . '/painelPaciente.php');} else { echo getResource(PAINELCONTROLE . '/index.php'); } ?>">Hospital Web</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php">Painel</a></li>
-            <li><a href="perfil.php">Meu Perfil</a></li>
-            <li><a href="registrarPonto.php">Registrar Ponto</a></li>
+            <li><a href="<?php if($_SESSION['nivel'] == 4) { echo getResource(PAINELPACIENTE . '/painelPaciente.php');} else { echo getResource(PAINELCONTROLE . '/index.php'); } ?>">Painel</a></li>
+            <li><a href="<?php echo getResource(PAINELCONTROLE . '/perfil.php');?>">Meu Perfil</a></li>
+            <?php if($_SESSION['nivel'] != 4){ echo '<li><a href="registrarPonto.php">Registrar Ponto</a></li>' ; } ?>
             <li><a href="#">Ajuda</a></li>
               <li><a href="../logout.php">Sair</a></li>
           </ul>
