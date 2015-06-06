@@ -27,11 +27,45 @@ class procedimentoDAO extends DAO {
 	public function consultasPaciente($id_paciente){
 		
 		
-		$sql = "SELECT nome, Hentrada, descricao";
-		$sql .=	"FROM procedimento";
-		$sql .=	"INNER JOIN tipo_procedimento";
-		$sql .=	"WHERE procedimento.id_tipo_procedimento = tipo_procedimento.id_tipo_procedimento";
+		$sql = "SELECT procedimento.nome, Hentrada, pessoa.nome";
+		$sql .=" FROM procedimento";
+		$sql .=" INNER JOIN pessoa ON cpf = id_medico";
+		$sql .=" WHERE id_tipo_pessoa =1";
+		$sql .=" AND id_paciente =".$id_paciente;
 		
+		$resultado = mysqli_query($this->conexao, $sql);
 		
+		return $resultado;
 	}
+	 public function quantidadeConsultas(){
+
+        $sql = "SELECT COUNT(nome) as totalConsulta FROM procedimento WHERE Hentrada >NOW() AND tipo_procedimento = 1";
+        $result = mysqli_query($this->conexao, $sql);
+
+        return $result;
+
+    }
+
+    public function verificaVagas($dia){
+        $diat = $dia."08:00:00";
+        $sql = "SELECT Count(nome) as totalConsultaHoje FROM procedimento WHERE tipo_procedimento = 1 AND Hentrada >".$dia."00:00:00 and Hentrada >".$diat;
+        $result = mysqli_query($this->conexao, $sql);
+
+        $aux = mysqli_fetch_assoc($result);
+
+        return $aux['totalConsultaHoje'];
+    }
+	
+	 public function resultadoExame($paciente){
+       
+        $sql = "SELECT exame FROM arquivos";
+		$sql .= " INNER JOIN resultado ON id = id_arquivo";
+		$sql .= " INNER JOIN procedimento ON examinado = id_paciente";
+		$sql .= " WHERE id_paciente = ".$paciente;
+		 
+        $result = mysqli_query($this->conexao, $sql);
+
+        return $result;
+    }
+
 }

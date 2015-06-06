@@ -19,6 +19,7 @@
     define('BOOTSTRAPJS', BSJS . '/bootstrap.min.js');
     define('AUTOCOMPLETEJS', JS . '/autocomplete.js');
     define('ANGULARJS', JS . '/angular.min.js');
+    define('AUTOCOMPLETEESPECIALIDADEJS', JS . '/autocompleteespecialidade.js');
 
     /* Varíaveis do BD */
     define('HOST', 'localhost');
@@ -38,6 +39,8 @@
     include_once(getPHP(DAO) . '/materialDAO.php');
     include_once(getPHP(DAO) . '/tipo_materialDAO.php');
     include_once(getPHP(DAO) . '/resultadoDAO.php');
+    include_once(getPHP(DAO) . '/especialidadeDAO.php');
+    include_once(getPHP(DAO) . '/medico_especialidadeDAO.php');
 
     include_once(getPHP(CONEXAO) . '/conectaBD.php');
     include_once(getPHP(CONEXAO) . '/desconectBD.php');

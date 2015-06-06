@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 include_once('../../config.php');
 
 $plantoes = new plantaoDAO();
-$resultados = $plantoes->getAll();
+$resultados = $plantoes->findAllJoinPessoaEspecialidade();
 
 $retorno = "";
 while($row = mysqli_fetch_assoc($resultados)) {
@@ -14,7 +14,7 @@ while($row = mysqli_fetch_assoc($resultados)) {
     $retorno .= '{"Entrada":"' . $row['hentrada'] . '",';
     $retorno .= '"Saida":"' . $row['hsaida'] . '",';
 	$retorno .= '"Especialidade":"' . $row['especialidade'] . '",';
-    $retorno .= '"CPF":"' . $row['id_funcionario'] . '"}';
+    $retorno .= '"CPF":"' . $row['nome'] . '"}';
 }
 
 $retorno = '{"records":[' . $retorno .']}';

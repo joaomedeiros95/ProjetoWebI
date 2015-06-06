@@ -43,7 +43,7 @@ function contarProcedimentos() {
                 </div>
                 <div class="col-xs-6 col-sm-3 placeholder">
                     <img src="../../img/procedimento.png" class="img-responsive center-block" width="100px" height="100px"/>
-                    <h4>Procedimentos Marcadas</h4>
+                    <h4>Procedimentos Marcados</h4>
                     <span class="text-muted"><?php echo contarProcedimentos(); ?> Procedimentos</span>
                 </div>
             </div>

@@ -25,6 +25,13 @@ class pessoaDAO extends DAO {
 
         return $result;
     }
+	
+	public function findByCPF($CPF) {
+        $sql = "SELECT * FROM " . $this->tabela . " WHERE cpf = " . $CPF;
+        $result = mysqli_query($this->conexao, $sql);
+
+        return $result;
+    }
 
     /**
      * Verifica se login está correto
