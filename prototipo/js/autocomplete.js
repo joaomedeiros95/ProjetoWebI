@@ -16,7 +16,7 @@ function showHint(str, campo, tipoPessoa) {
                 document.getElementById(campoSuggestion).style.display = "block";
             }
         }
-        xmlhttp.open("GET", "autoCompletePessoa.php?query=" + str + "&campo=" + campo + "&tipo_pessoa=" + tipoPessoa, true);
+        xmlhttp.open("GET", "../controle/autoCompletePessoa.php?query=" + str + "&campo=" + campo + "&tipo_pessoa=" + tipoPessoa, true);
         xmlhttp.send();
     }
 }

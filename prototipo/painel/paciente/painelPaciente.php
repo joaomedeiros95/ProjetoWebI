@@ -1,71 +1,54 @@
 <?php 
 
-
 	include_once('../../config.php');
 	include_once('../controle/header.php');
+
+    function selecioneTipoExame() {
+        $tipoExame = new tipo_exameDAO();
+        $result = $tipoExame->getALL();
+
+        while($row = $result->fetch_assoc()) {
+            echo "<option value='" . $row['id_tipo_exame'] . "'>" . $row['nome'] . "</option>";
+        }
+    }
+
+    function selecioneTipoProcedimento() {
+        $tipoExame = new tipo_procedimentoDAO();
+        $result = $tipoExame->getALL();
+
+        while($row = $result->fetch_assoc()) {
+            echo "<option value='" . $row['id_tipo_procedimento'] . "'>" . $row['descricao'] . "</option>";
+        }
+    }
 ?>
 
-<!--<html>
-		<head>
-        <meta charset="utf-8">
-        <link rel="icon" href="../../favicon.ico">
-        <link rel="stylesheet" href="bs/css/bootstrap.min.css">
-        <link rel="stylesheet" href="bs/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="../../css/localizacao.css">
-        <title>Painel do paciente</title>
 
-        <style type="text/css">#idadv {display:none;}</style></head>
-
-    <body>
-
-        <nav class="navbar navbar-inverse navbar-fixed-top " style="background-color: red">
-            <div class="container-fluid" style="background-color: red">
-                <div class="navbar-header" style="background-color: red">
-                    
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                   
-                    <a style="color: black" class="navbar-brand" href="#">SGH</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right" style="color: black">
-                        <li><a style="color: black" href="#">Dashboard</a></li>
-                        <li><a style="color: black" href="#">Settings</a></li>
-                        <li><a style="color: black" href="#">Profile</a></li>
-                        <li><a style="color: black" href="#">Help</a></li>
-                    </ul>
-                    
-                </div>
-            </div>
-        </nav>
-!-->
-        <div class="container container-fluid conteudoTeste">
+        <div class="container conteudoTeste">
             
             <div class="row">
               
-                <div  class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <div  class="main">
                     <h1 class="page-header">Painel do paciente</h1>
 
-                    <div class="row placeholders">
+                    <div class="row" style="text-align: center;">
                         
-                        <div id="a" onclick="selectButton('a')" onmouseover="buttonColor(1,'a')" onmouseout="buttonColor(2,'a')" class="col-xs-6 col-sm-3"  >
+                        <div id="a" onclick="selectButton('a')" onmouseover="buttonColor(1,'a')" onmouseout="buttonColor(2,'a')" class="col-xs-6 col-sm-4"  >
                             
-                            <label class="img-responsive glyphicon glyphicon-calendar" ></label>
+                            <span class="img-responsive glyphicon glyphicon-calendar" ></span>
                             <h4>Agenda</h4>
                             <span class="text-muted">Agendamento de consultas</span>
                         </div>
                         
-                        <div id="b" onclick="selectButton('b')" onmouseover="buttonColor(1,'b')" onmouseout="buttonColor(2,'b')" class="col-xs-6 col-sm-3 placeholder" >
+                        <div id="b" onclick="selectButton('b')" onmouseover="buttonColor(1,'b')" onmouseout="buttonColor(2,'b')" class="col-xs-6 col-sm-4 placeholder" >
                             
-                            <label class="img-responsive glyphicon glyphicon-folder-open"  data-holder-rendered="true"></label>
+                            <span class="img-responsive glyphicon glyphicon-folder-open"  data-holder-rendered="true"></span>
                             <h4>Consultas</h4>
                             <span class="text-muted">Suas consultas</span>
                         </div>
                         
-                        <div id="c"   onclick="selectButton('c')" onmouseover="buttonColor(1,'c')" onmouseout="buttonColor(2,'c')" class="col-xs-6 col-sm-3 placeholder" >
+                        <div id="c"   onclick="selectButton('c')" onmouseover="buttonColor(1,'c')" onmouseout="buttonColor(2,'c')" class="col-xs-6 col-sm-4 placeholder" >
                             
-                            <label class="img-responsive glyphicon glyphicon-paste"   data-holder-rendered="true"></label>
+                            <span class="img-responsive glyphicon glyphicon-paste"   data-holder-rendered="true"></span>
                             <h4>Exames</h4>
                             <span class="text-muted">Resultado de exames</span>
                         </div>
@@ -75,16 +58,16 @@
         
                     <section id="conteudo" class="table-responsive">
                         
-                          <h2 id="menuSelect" class="sub-header"></h2>
-                        			
-								
-                          <div id="" class="">
+                          <h2 id="menuSelect">Agenda</h2>
+
+
+                          <div class="agenda" >
                              	<?php include 'funcaoCalendario.php' ?>
                           </div>
-						  <div id="" class="">
+						  <div class="consulta noVisible" >
                              	<?php include'consultasPaciente.php' ?>
                           </div>
-						  <div id="" class="">
+						  <div class="exame noVisible">
 							  
 							 <?php include'baixarExames.php';?>
                           </div>
@@ -93,25 +76,99 @@
                 </div>
             </div>
         </div>
-        
-    
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
-        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-        <script src="../../assets/js/vendor/holder.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-        <script src="../../js/menu.js"></script>
 
-        <div id="idadv"><iframe src="http://vivafiliates.com.br/afiliado.php?user=ft.org" width="240" height="240" frameborder="0" scrolling="no"></iframe></div><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" preserveAspectRatio="none" style="visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs></defs><text x="0" y="10" style="font-weight:bold;font-size:10pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle">200x200</text></svg></body></html>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Marcar Consulta</h4>
+                    </div>
+                    <form method="post" action="../controle/controleMarcarProcedimento.php">
+                        <div class="modal-body">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="consulta" type="radio" name="tipoProcedimento" value="<?php echo tipo_procedimentoDAO::$CONSULTA; ?>" checked> Consulta
+                                </label>
+                                <label>
+                                    <input id="exame" type="radio" name="tipoProcedimento" value="<?php echo tipo_procedimentoDAO::$EXAME; ?>"> Exame
+                                </label>
+                            </div>
+                            <div class="form-group consulta">
+                                <label for="medico">Médico: </label>
+                                <input autocomplete="off" type="text" id="medico" class="form-control" name="medico" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$MEDICO; ?>)">
+                                <div id="suggestion_medico" class="autocomplete"></div>
+                                <input type="hidden" name="id_medico" id="medico_hidden" />
+                            </div>
+                            <div class="form-group exame noVisible">
+                                <label for="medico">Enfermeira: </label>
+                                <input type="text" id="enfermeira" class="form-control" name="enfermeira" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$ENFERMEIRA; ?>)">
+                                <div id="suggestion_enfermeira" class="autocomplete"></div>
+                                <input type="hidden" name="id_enfermeira" id="enfermeira_hidden" />
+                            </div>
+                            <div class="form-group">
+                                <label for="nome">Data:</label>
+                                <input id="dia_hidden" class="form-control" type="text" name="data"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="hora">Hora: </label>
+                                <input type="time" id="hora" class="form-control" name="hora" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="duracao">Hora Fim: </label>
+                                <input type="time" id="duracao" class="form-control" name="duracao" required>
+                            </div>
+                            <div class="form-group exame noVisible">
+                                <label for="duracao">Tipo Exame: </label>
+                                <select name="id_tipo_exame" class="form-control">
+                                    <option value="0">-- SELECIONE --</option>
+                                    <?php echo selecioneTipoExame() ?>
+                                </select>
+                            </div>
+                            <div class="form-group consulta">
+                                <label for="duracao">Tipo Procedimento: </label>
+                                <select name="id_tipo_procedimento" class="form-control">
+                                    <option value="0">-- SELECIONE --</option>
+                                    <?php echo selecioneTipoProcedimento() ?>
+                                </select>
+                            </div>
+                            <input type="hidden" name="id_paciente" value="<?php echo $_SESSION['senha'] ?>">
+                            <input type="hidden" name="nome" value="Marcado pelo portal do paciente.">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-</body>
-</html>
+<?php include_once('../../footer.php') ?>
+<script src="../../js/menu.js"></script>
+<?php echo '<script src= ' . getResource(AUTOCOMPLETEJS) . '></script>'; ?>
+<script>
+
+    function passVariableForModal(valor) {
+        $('#dia_hidden').val(valor);
+    }
+
+    $(':radio').on('change', function () {
+        var th = $(this), value = th.attr('value');
+        var campo1 = ".consulta";
+        var campo2 = ".exame";
+        if(th.is(':checked')) {
+            switch (value) {
+                case '1':
+                    $(campo1).removeClass('noVisible');
+                    $(campo2).addClass('noVisible');
+                    break;
+                case '2':
+                    $(campo1).addClass('noVisible');
+                    $(campo2).removeClass('noVisible');
+                    break;
+            }
+        }
+    });
+</script>

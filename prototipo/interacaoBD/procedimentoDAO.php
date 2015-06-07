@@ -27,16 +27,32 @@ class procedimentoDAO extends DAO {
 	public function consultasPaciente($id_paciente){
 		
 		
-		$sql = "SELECT pessoa.nome, Hentrada, procedimento.nome, procedimento.codigo";
+		$sql = "SELECT tp.descricao as pnome, Hentrada, pessoa.nome, procedimento.codigo";
 		$sql .=" FROM procedimento";
 		$sql .=" INNER JOIN pessoa ON cpf = id_medico";
-		$sql .=" WHERE id_tipo_pessoa = " . tipo_pessoaDAO::$MEDICO;
+        $sql .=" JOIN tipo_procedimento tp USING (id_tipo_procedimento)";
+		$sql .=" WHERE id_tipo_pessoa =1";
 		$sql .=" AND id_paciente =".$id_paciente;
 
 		$resultado = mysqli_query($this->conexao, $sql);
 		
 		return $resultado;
 	}
+
+    public function examesPaciente($id_paciente){
+
+
+        $sql = "SELECT te.nome as pnome, procedimento.codigo";
+        $sql .=" FROM procedimento";
+        $sql .=" JOIN tipo_exame te USING (id_tipo_exame)";
+        $sql .=" WHERE id_paciente =".$id_paciente;
+
+        $resultado = mysqli_query($this->conexao, $sql);
+
+        return $resultado;
+    }
+
+
 	 public function quantidadeConsultas(){
 
         $sql = "SELECT COUNT(nome) as totalConsulta FROM procedimento WHERE Hentrada >NOW() AND tipo_procedimento = 1";
@@ -47,6 +63,7 @@ class procedimentoDAO extends DAO {
     }
 
     public function verificaVagas($dia){
+		
         $diat = $dia."08:00:00";
         $sql = "SELECT Count(nome) as totalConsultaHoje FROM procedimento WHERE tipo_procedimento = 1 AND Hentrada >".$dia."00:00:00 and Hentrada >".$diat;
         $result = mysqli_query($this->conexao, $sql);
@@ -58,10 +75,11 @@ class procedimentoDAO extends DAO {
 	
 	 public function resultadoExame($paciente){
        
-        $sql = "SELECT a.exame FROM arquivos a";
-		$sql .= " JOIN resultado r ON a.id = r.id_arquivo";
-		$sql .= " JOIN procedimento p ON r.id_procedimento = p.codigo";
-		$sql .= " WHERE p.id_paciente = ".$paciente;
+        $sql = "SELECT te.nome, Hentrada, a.exame FROM arquivos a";
+		$sql .= " INNER JOIN resultado r ON id = id_arquivo";
+		$sql .= " INNER JOIN procedimento p ON id_procedimento = codigo";
+        $sql .= " JOIN tipo_exame te USING (id_tipo_exame) ";
+		$sql .= " WHERE id_paciente = " . $paciente;
 
         $result = mysqli_query($this->conexao, $sql);
 

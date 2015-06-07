@@ -39,4 +39,7 @@ if($exameOrProcedimento == tipo_procedimentoDAO::$CONSULTA) {
 $procedimento = new procedimentoDAO();
 $procedimento->inserir($campos,$valores);
 
-echo '<script>alert("Cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/marcarProcedimento.php");</script>';
+if($_SESSION['nivel'] == tipo_pessoaDAO::$PACIENTE)
+    echo '<script>alert("Cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/paciente/painelPaciente.php");</script>';
+else
+    echo '<script>alert("Cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/marcarProcedimento.php");</script>';

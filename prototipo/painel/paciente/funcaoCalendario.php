@@ -4,10 +4,16 @@ include_once('../../config.php');
 
 function MostreSemanas()
 {
-	$semanas = "DSTQQSS";
+	$semanas[] = "Domingo";
+    $semanas[] = "Segunda";
+    $semanas[] = "Terça";
+    $semanas[] = "Quarta";
+    $semanas[] = "Quinta";
+    $semanas[] = "Sexta";
+    $semanas[] = "Sábado";
 
 	for( $i = 0; $i < 7; $i++ )
-	 echo "<td class='tdCalendario'>".$semanas{$i}."</td>";
+	 echo "<th class='tdCalendario'>".$semanas[$i]."</th>";
 
 }
 
@@ -93,11 +99,11 @@ function MostraCalendario($mes)
 {
 
 	$numero_dias = GetNumeroDias( $mes );	// retorna o nï¿½mero de dias que tem o mes desejado
-	$diacorrente = 0;	
+	$diacorrente = 0;
     //jddayofweek retorna o dia da semana
 	$diasemana = jddayofweek( cal_to_jd(CAL_GREGORIAN, $mes,"01",date('Y')) , 0 );	// funï¿½ï¿½o que descobre o dia da semana
 
-	echo "<table width='350' height='250' border = 0 cellspacing = '0'>";
+	echo "<table class='table calendario'>";
 	
 	 echo "<tr>";
 	   MostreSemanas();	// funï¿½ï¿½o que mostra as semanas aqui
@@ -109,9 +115,14 @@ function MostraCalendario($mes)
 
 	   echo "<tr>";
 
-	   for( $coluna = 0; $coluna < 7; $coluna++ )
+	   for( $coluna = 0; $coluna < 7 && $diacorrente + 1 <= $numero_dias; $coluna++ )
 	   {
-		echo "<td width = 40 height = 40 ";
+           $datacompleta = "'" . date('Y') . '-' . $mes . '-' . ($diacorrente + 1) . "'";
+		    echo "<td  ";
+           if($diacorrente + 1 >= intval(date('j')))
+                echo "data-toggle='modal' data-target='#myModal' onclick=passVariableForModal(" . $datacompleta . ") ";
+           else
+                echo " class = 'disabled' ";
 
 		  if( ($diacorrente == ( date('d') - 1) && date('m') == $mes) )
 		  {	
@@ -149,8 +160,8 @@ function MostraCalendario($mes)
                }
                else
                {
-                   echo "<a href = " . $_SERVER["PHP_SELF"] . "?dia=" . ($diacorrente + 1) . ">" . ++$diacorrente . "</a>";//links dos dias
 
+                       echo ++$diacorrente;//links dos dias
 
 			    }
            }
@@ -170,28 +181,6 @@ function MostraCalendario($mes)
 	}
 
 	echo "</table>";
-}
-
-function MostreCalendarioCompleto()
-{
-	    echo "<table class='calendario'>";
-	    $cont = 1;
-	    for( $j = 0; $j < 4; $j++ )
-	    {
-		  echo "<tr class='trCalendario'>";
-		for( $i = 0; $i < 3; $i++ )
-		{
-		 
-		  echo "<td class='tdCalendario'>";
-			MostreCalendario( ($cont < 10 ) ? "0".$cont : $cont );  
-
-		        $cont++;
-		  echo "</td>";
-
-	 	}
-		echo "</tr>";
-	   }
-	   echo "</table>";
 }
 
 ?>

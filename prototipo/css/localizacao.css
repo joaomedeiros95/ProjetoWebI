@@ -41,7 +41,7 @@ body{
 
 .conteudoTeste{
     
-    margin-top: 5%;
+    margin-top: 20px;
     
 }
 
@@ -51,9 +51,17 @@ body{
     margin-left: 30%;
 }
 
-.calendario{
+.calendario td {
+    text-align: center;
+}
 
-       background-color: red;
+.calendario th {
+    text-align: center;
+}
+
+.calendario td:hover {
+    background-color: #ff776f;
+    border: 1px solid #d3d3d3;
 }
 
 .trCalendario{
@@ -63,14 +71,11 @@ body{
 
 .tdCalendario{
 
-    background-color: red;
 }
 
 #diaSel{
-
-    width: 5px;
-    height: 5px;
-    background-color: red;
+    background-color: #ff9e97;
+    border: 1px solid #d3d3d3;
 }
 #agenda{
 	
@@ -84,4 +89,15 @@ body{
 #exames{
 	display: none;
 	
+}
+.ui-dialog .ui-dialog-content {
+    overflow: inherit !important;
+}
+.listap{
+
+    background-color: #EEEEEE;
+}
+
+.disabled {
+    background-color: #9c969d;
 }

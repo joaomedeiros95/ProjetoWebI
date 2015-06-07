@@ -7,21 +7,20 @@
 	$consultas = new procedimentoDAO();
 	$resultado = $consultas->consultasPaciente($_SESSION['senha']);
 
-	$imprimi = "<h1>Suas Consultas</h1><tr></br>";
-   	$teste = mysqli_fetch_assoc($resultado);
-	if($teste){
-	while ($row = mysqli_fetch_assoc($resultado)) {
-        $data = date($row['Hentrada']);
-		
-           $imprimir .= "<td>" . $row['procedimento.nome'] ."</td> <td>".$data."</td> <td>".$row['pessoa.nome'] ."</td></br>";
+    $imprimir = "";
+    $teste = mysqli_num_rows($resultado);
+    if ($teste > 0) {
+        $imprimir .= "<table class='table'><tr><th>Procedimento</th><th>Data</th><th>Paciente</th></tr>";
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            $data = date($row['Hentrada']);
+                $imprimir .= "<tr>";
+                $imprimir .= "<td>" . $row['pnome'] . "</td><td>" . $data . "</td><td>" . $row['nome'] . "</td>";
+                $imprimir .= "</tr>";
+            }
+        $imprimir .= "</table>";
 
     }
-    $imprimi .= "</tr>";
-	
-    echo $imprimi;
+    else{
+		$imprimir.= "Não há consultas no momento!";
 	}
-	else{
-		
-		echo "<h3>Você não tem nenhuma consulta cadastrada no momento!</h3>";
-	}
-?>
+ 	echo $imprimir;
