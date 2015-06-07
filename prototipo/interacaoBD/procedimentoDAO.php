@@ -27,12 +27,12 @@ class procedimentoDAO extends DAO {
 	public function consultasPaciente($id_paciente){
 		
 		
-		$sql = "SELECT procedimento.nome, Hentrada, pessoa.nome";
+		$sql = "SELECT pessoa.nome, Hentrada, procedimento.nome, procedimento.codigo";
 		$sql .=" FROM procedimento";
 		$sql .=" INNER JOIN pessoa ON cpf = id_medico";
-		$sql .=" WHERE id_tipo_pessoa =1";
+		$sql .=" WHERE id_tipo_pessoa = " . tipo_pessoaDAO::$MEDICO;
 		$sql .=" AND id_paciente =".$id_paciente;
-		
+
 		$resultado = mysqli_query($this->conexao, $sql);
 		
 		return $resultado;
@@ -58,11 +58,11 @@ class procedimentoDAO extends DAO {
 	
 	 public function resultadoExame($paciente){
        
-        $sql = "SELECT exame FROM arquivos";
-		$sql .= " INNER JOIN resultado ON id = id_arquivo";
-		$sql .= " INNER JOIN procedimento ON examinado = id_paciente";
-		$sql .= " WHERE id_paciente = ".$paciente;
-		 
+        $sql = "SELECT a.exame FROM arquivos a";
+		$sql .= " JOIN resultado r ON a.id = r.id_arquivo";
+		$sql .= " JOIN procedimento p ON r.id_procedimento = p.codigo";
+		$sql .= " WHERE p.id_paciente = ".$paciente;
+
         $result = mysqli_query($this->conexao, $sql);
 
         return $result;

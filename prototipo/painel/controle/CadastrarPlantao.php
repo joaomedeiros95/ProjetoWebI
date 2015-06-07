@@ -44,7 +44,7 @@ include_once('header.php');
 	
 			<div  ng-app="PlantaoAPP" ng-controller="PlantaoControl">
             <h2 class="sub-header">Plantões Cadastrados</h2>
-            <input type="text" placeholder="Pesquise Pelo CPF" ng-model="filtroPaciente.CPF">
+            <input type="text" placeholder="Pesquise Pelo Nome" ng-model="filtroPaciente.CPF">
 
             <table class="table table-striped">
                 <thead>
@@ -52,7 +52,7 @@ include_once('header.php');
                     <th>Especialidade </th>
                     <th>Entrada </th>
                     <th>Saída</th>
-                    <th>CPF</th>
+                    <th>Nome</th>
                 </tr>
                 </thead>
                 <tbody>

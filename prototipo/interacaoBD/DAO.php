@@ -19,7 +19,7 @@
 abstract class DAO
 {
     protected $tabela = "";
-    protected $conexao;
+    public $conexao;
 
     /** Método construtor
      * @method __construct
@@ -62,6 +62,7 @@ abstract class DAO
         if (!$ins) {
             die ("Ocorreu um erro na inserçao: " . $sql_ins);
         }
+
     }
 
     /** Método atualizar

@@ -18,11 +18,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hospital Web</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../css/principal.css">
+    <title>Hospital Web</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php
+        echo '<link rel="stylesheet" href=' . getResource(BSCSS . '/bootstrap.min.css') . '>';
+        echo '<link rel="stylesheet" href=' . getResource(CSS . '/principal.css') . '>';
+        echo '<link rel="stylesheet" href=' . getResource(CSS . '/localizacao.css') . '>';
+    ?>
+    <link rel="icon" href="../../favicon.ico">
 </head>
 <body class="panel-body">
 
@@ -42,7 +46,7 @@
             <li><a href="<?php if($_SESSION['nivel'] == 4) { echo getResource(PAINELPACIENTE . '/painelPaciente.php');} else { echo getResource(PAINELCONTROLE . '/index.php'); } ?>">Painel</a></li>
             <li><a href="<?php echo getResource(PAINELCONTROLE . '/perfil.php');?>">Meu Perfil</a></li>
             <?php if($_SESSION['nivel'] != 4){ echo '<li><a href="registrarPonto.php">Registrar Ponto</a></li>' ; } ?>
-            <li><a href="#">Ajuda</a></li>
+            <li><a href="ajuda.php" >Ajuda</a></li>
               <li><a href="../logout.php">Sair</a></li>
           </ul>
         </div>

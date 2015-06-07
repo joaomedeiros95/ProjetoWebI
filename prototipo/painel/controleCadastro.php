@@ -49,5 +49,17 @@ if(isset($_REQUEST['id_tipo_pessoa'])) {
 $pessoa = new pessoaDAO();
 $pessoa->inserir($campos, $valores);
 
+
+session_start();
+
+    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)) {
+		
+		echo '<script>alert("' . $nome . ' cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/cadastro.php");</script>';
  
-echo '<script>alert("' . $nome . ' cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/cadastroGenerico.php");</script>';
+    }
+	else{
+		echo '<script>alert("' . $nome . ' cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/cadastroGenerico.php");</script>';
+		
+	}
+
+ 

@@ -14,6 +14,8 @@
     define('CONEXAO', BASE . '/conexaoBD');
     define('PAINELPACIENTE', BASE . '/painel/paciente');
     define('PAINELCONTROLE', BASE . '/painel/controle');
+    define('CSS', BASE . '/css');
+    define('BSCSS', BASE . '/bs/css');
     define('JS', BASE . '/js');
     define('BSJS', BASE . '/bs/js');
     define('HOSPITALWEBJS', JS . '/hospitalweb.js');
@@ -22,6 +24,7 @@
     define('AUTOCOMPLETEJS', JS . '/autocomplete.js');
     define('ANGULARJS', JS . '/angular.min.js');
     define('AUTOCOMPLETEESPECIALIDADEJS', JS . '/autocompleteespecialidade.js');
+    define('PASTAARQUIVOS', BASE . '/painel/paciente/arquivos');
 
     /* Varíaveis do BD */
     define('HOST', 'localhost');
@@ -43,6 +46,7 @@
     include_once(getPHP(DAO) . '/resultadoDAO.php');
     include_once(getPHP(DAO) . '/especialidadeDAO.php');
     include_once(getPHP(DAO) . '/medico_especialidadeDAO.php');
+    include_once(getPHP(DAO) . '/arquivosDAO.php');
 
     include_once(getPHP(CONEXAO) . '/conectaBD.php');
     include_once(getPHP(CONEXAO) . '/desconectBD.php');
