@@ -18,12 +18,12 @@ $result = $pessoa->getALL();  /*exemplo de um método que pega todas as tuplas d
 
 O projeto está no seguinte link: http://www.joaoemedeiros.com/ufrn/hospitalweb/prototipo/
 
-Logins:
+Logins para teste (http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/login.php):
 
-| Painel | Login | Senha |
-| ------------------- | ----------------------------------------- |
-| Painel de Controle | joaoribeiromedeiros@gmail.com | 5948160505|
-| Painel do Paciente | gustavo.hmf20@gmail.com | 923257845 |
+Painel | Login | Senha 
+------ | ----- | -----
+Painel de Controle | joaoribeiromedeiros@gmail.com | 5948160505
+Painel do Paciente | gustavo.hmf20@gmail.com | 923257845
 
 Imagens do protótipo (04/06/2015):
 
