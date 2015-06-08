@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://joaoemedeiros.com/" />
+<title>PainelControle</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PainelControle</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/ufrn/hospitalweb/prototipo/#contato</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputEmail</td>
+	<td>joaoribeiromedeiros@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputPassword</td>
+	<td>5948160505</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/controle/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Registrar Ponto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=hora_entrada</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=hora_saida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Meu Perfil</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label</td>
+	<td>Nome</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger </td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label</td>
+	<td>Nome</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Marcar Procedimento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.form-group &gt; label</td>
+	<td>exact:Paciente:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=select[name=&quot;id_tipo_procedimento&quot;] &gt; option[value=&quot;2&quot;]</td>
+	<td>Cirurgia do Pé</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Consultas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4</td>
+	<td>Pacientes</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Cadastro de Exames</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label</td>
+	<td>Nome do Exame:</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Cadastro de Procedimentos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label</td>
+	<td>Nome do Procedimento:</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Controle estoque</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3</td>
+	<td>Adicionar Estoque:</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Controle horário</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.sub-header</td>
+	<td>Horários Cadastrados no Ponto</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Controle Plantão</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2</td>
+	<td>Cadastre Aqui um Plantão</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.sub-header</td>
+	<td>Plantões Cadastrados</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Cadastrar Resultado</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2</td>
+	<td>Cadastre o Resultado de Um Procedimento</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=arquivo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Painel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.page-header</td>
+	<td>Nome do Hospital</td>
+</tr>
+</tbody></table>
+</body>
+</html>
