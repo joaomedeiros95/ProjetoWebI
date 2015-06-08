@@ -64,10 +64,10 @@
                           <div class="agenda" >
                              	<?php include 'funcaoCalendario.php' ?>
                           </div>
-						  <div class="consulta noVisible" >
+						  <div class="consultas noVisible" >
                              	<?php include'consultasPaciente.php' ?>
                           </div>
-						  <div class="exame noVisible">
+						  <div class="exames noVisible">
 							  
 							 <?php include'baixarExames.php';?>
                           </div>

@@ -16,20 +16,20 @@ function selectButton(bt) {//bt recebe o valor da tag para modificar o valor de 
     var aux;
     if (bt == 'a') {
         aux = "Agenda";
-        $(".consulta").addClass("noVisible");
-        $(".exame").addClass("noVisible");
+        $(".consultas").addClass("noVisible");
+        $(".exames").addClass("noVisible");
         $(".agenda").removeClass("noVisible");
     }
     if (bt == 'b') {
         aux = "Consultas";
-        $(".consulta").removeClass("noVisible");
-        $(".exame").addClass("noVisible");
+        $(".consultas").removeClass("noVisible");
+        $(".exames").addClass("noVisible");
         $(".agenda").addClass("noVisible");
     }
     if (bt == 'c') {
         aux = "Exames";
-        $(".consulta").addClass("noVisible");
-        $(".exame").removeClass("noVisible");
+        $(".consultas").addClass("noVisible");
+        $(".exames").removeClass("noVisible");
         $(".agenda").addClass("noVisible");
     }
     document.getElementById("menuSelect").innerHTML = aux;//modifica o texto da tag no html
