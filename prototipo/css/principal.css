@@ -288,4 +288,8 @@
     color: #fff;
     background-color: #373737;
     background-image: none;
-}	
+}
+
+.paginas p {
+    font-size: 17px;
+}

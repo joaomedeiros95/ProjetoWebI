@@ -10,7 +10,7 @@
     $imprimir = "";
     $teste = mysqli_num_rows($resultado);
     if ($teste > 0) {
-        $imprimir .= "<table class='table'><tr><th>Procedimento</th><th>Data</th><th>Paciente</th></tr>";
+        $imprimir .= "<table class='table'><tr><th>Procedimento</th><th>Data</th><th>Médico</th></tr>";
         while ($row = mysqli_fetch_assoc($resultado)) {
             $data = date($row['Hentrada']);
                 $imprimir .= "<tr>";

@@ -1,6 +1,5 @@
 <?php 
 
-	include_once('../../config.php');
 	include_once('../controle/header.php');
 
     function selecioneTipoExame() {

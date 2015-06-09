@@ -7,19 +7,19 @@
                 <div class="col-xs-12 col-md-4">
                     <img src="img/avatar.png" class="img-responsive center-block" width="100px" height="100px"/>
 
-                    <p class="text-center text-rows-index">Alguma explicação</p>
+                    <p class="text-center text-rows-index">Profissionais Qualificados</p>
                 </div>
                 <!--/.col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
                     <img src="img/saude.png" class="img-responsive center-block" width="100px" height="100px"/>
 
-                    <p class="text-center text-rows-index">Alguma explicação</p>
+                    <p class="text-center text-rows-index">Melhor Assistência Médica</p>
                 </div>
                 <!--/col-xs-12 -->
                 <div class="col-xs-12 col-md-4">
                     <img src="img/web.png" class="img-responsive center-block" width="100px" height="100px"/>
 
-                    <p class="text-center text-rows-index">Alguma explicação</p>
+                    <p class="text-center text-rows-index">Hospital Completo com um Click</p>
                 </div>
                 <!--/.col-xs-12 -->
             </div>
@@ -29,59 +29,74 @@
     </div>
 </div>
 
-<div class="container" id="sobre">
-    <h2>Sobre</h2>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dignissim nisi sodales pretium ornare. In rhoncus
-        nunc eros, consectetur viverra dui hendrerit non. Donec quam eros, mattis a tristique sed, cursus sit amet diam.
-        Vivamus eget mauris eu odio tristique luctus. Aenean quis mollis ipsum. Nullam eu euismod magna. Pellentesque
-        molestie magna sit amet congue aliquet. Nam pharetra ipsum in purus accumsan tempor. Integer lectus ligula,
-        dictum eu pellentesque non, rhoncus ut nibh.</p>
-
-    <p>Quisque tempor tempor posuere. Aliquam laoreet ac purus volutpat imperdiet. Integer id venenatis leo. Sed
-        consectetur sem et metus suscipit eleifend. Sed nec nulla vel eros finibus pretium. Pellentesque tristique urna
-        cursus rutrum pellentesque. Aliquam volutpat condimentum dui ac pretium. Nulla id mi mi. Donec vel quam
-        tristique, porta enim ultrices, pharetra libero. Ut in lacus scelerisque, posuere elit at, pellentesque mi.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur sit amet dictum sapien, sit amet
-        porttitor magna. Donec a sagittis velit.</p>
-
-    <p>Sed nisl turpis, sollicitudin non dapibus ultrices, molestie nec leo. Vivamus non lorem vel lorem euismod
-        pharetra hendrerit ac libero. Etiam finibus id lorem a aliquet. Sed tristique dolor non fermentum molestie. In
-        hendrerit rhoncus ultricies. Morbi eget dui semper, fringilla quam et, volutpat dolor. Morbi vitae nisi orci.
-        Nam</p>
-<br>
-<br>
-<br>
-	<div class="contato" id="contato">
+<div class="container paginas" id="home">
 	
-	<h2>Contato</h2>
+	<h2>Bem vindo ao Hospital Web</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dignissim nisi sodales pretium ornare. In rhoncus
-        nunc eros, consectetur viverra dui hendrerit non. Donec quam eros, mattis a tristique sed, cursus sit amet diam.
-        Vivamus eget mauris eu odio tristique luctus. Aenean quis mollis ipsum. Nullam eu euismod magna. Pellentesque
-        molestie magna sit amet congue aliquet. Nam pharetra ipsum in purus accumsan tempor. Integer lectus ligula,
-        dictum eu pellentesque non, rhoncus ut nibh.</p>
+    	
+	<p>O Hospital Web é um sistema de gestão hospitalar online, o intuito desse sistema é acelerar e tornar totalmente digital 
+	    o cadastro de consultas e exames de um hospital ou clínica. Esse sistema foi pensando para facilitar a interação do paciente 
+		com seu hospital ou clínica como para a administração  do mesmo, esse gestor online vai mudar o jeito atual de como marcar e 
+		gerênciar consultas e exames trazendo benéficios mutuos para os pacientes  médicos e gestores.</p>
 
-    <p>Quisque tempor tempor posuere. Aliquam laoreet ac purus volutpat imperdiet. Integer id venenatis leo. Sed
-        consectetur sem et metus suscipit eleifend. Sed nec nulla vel eros finibus pretium. Pellentesque tristique urna
-        cursus rutrum pellentesque. Aliquam volutpat condimentum dui ac pretium. Nulla id mi mi. Donec vel quam
-        tristique, porta enim ultrices, pharetra libero. Ut in lacus scelerisque, posuere elit at, pellentesque mi.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur sit amet dictum sapien, sit amet
-        porttitor magna. Donec a sagittis velit.</p>
-
-    <p>Sed nisl turpis, sollicitudin non dapibus ultrices, molestie nec leo. Vivamus non lorem vel lorem euismod
-        pharetra hendrerit ac libero. Etiam finibus id lorem a aliquet. Sed tristique dolor non fermentum molestie. In
-        hendrerit rhoncus ultricies. Morbi eget dui semper, fringilla quam et, volutpat dolor. Morbi vitae nisi orci.
-        Nam</p>
-	
-	
-	
-	</div>
-	
+    <hr>
 </div>
 
 
+<div class="container paginas" id="sobre">
 
+	<h2>Sobre</h2>
+
+    <p> Após muitos anos de trabalho árduo, estudos e pesquisa construímos o melhor hospital do estado, toda
+	a nossa equipe é composta por profissionais bem qualificados e com muita experiência no mercado, devemos o nosso
+	sucesso a rapidez e qualidade dos serviços prestados com a ajuda do nosso sistema de gestão online que melhorou a logística
+	do atendimento e manutenção do hospital.</p>
+
+    <hr>
+</div>
+
+<div class="container paginas" id="contato">
+	
+	<h2>Contato</h2>
+
+    <form class="form-horizontal center-block" style="width: 70%;">
+            <!-- Text input-->
+            <div class="form-group">
+                <label  for="textinput">Nome</label>
+                <input id="textinput" name="textinput" type="text" placeholder="Seu nome..." class="input-sm form-control " required="">
+
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label  for="email">Email</label>
+                <input id="email" name="email" type="text" placeholder="Seu email..." class="input-sm form-control " required="">
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label  for="assunto">Assunto</label>
+                <input id="assunto" name="assunto" type="text" placeholder="Digite um assunto..." class="input-sm form-control " required="">
+
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label  for="texto">Texto</label>
+                <textarea id="texto" name="texto" class="input-sm form-control" >Escreva aqui sua dúvida...</textarea>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label  for="enviar"></label>
+                <button id="enviar" name="enviar" class="btn btn-danger">Enviar</button>
+            </div>
+
+    </form>
+
+
+</div>
+	
 <?php include_once('footer.php') ?>
 
 <script type="text/javascript">
