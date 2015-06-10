@@ -3,13 +3,9 @@
     include_once('../../config.php');
 
     session_start();
-    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)) {
-        unset($_SESSION['login']);
-        unset($_SESSION['senha']);
-        unset($_SESSION['nivel']);
-        header('location:../login.php');
+    if(!verificaUsuarioLogado()) {
+        header('Location:../login.php');
     }
-
     verificaPainelCorreto($_SESSION['nivel'], $_SERVER['REQUEST_URI']);
 
     $logado = $_SESSION['login'];

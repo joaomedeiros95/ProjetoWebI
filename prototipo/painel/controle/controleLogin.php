@@ -11,6 +11,7 @@
     $logou = $pessoa->verificaLogin($senha, $login);
     
     if($logou == true) {
+        unsetSession();
         $_SESSION['login'] = $login;
         $_SESSION['senha'] = $senha;
 
@@ -21,9 +22,7 @@
         else
             header('location:../paciente/painelPaciente.php');
     } else {
-        unset ($_SESSION['login']);
-        unset ($_SESSION['senha']);
-        unset ($_SESSION['nivel']);
+        destruirSessao();
         header('location:../login.php');
     }
 

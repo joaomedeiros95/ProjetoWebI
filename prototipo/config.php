@@ -83,3 +83,24 @@
             }
         }
     }
+
+    function verificaUsuarioLogado() {
+        if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)) {
+            unset($_SESSION['login']);
+            unset($_SESSION['senha']);
+            unset($_SESSION['nivel']);
+            return false;
+        }
+        return true;
+    }
+
+    function destruirSessao() {
+        unsetSession();
+        session_destroy();
+    }
+
+    function unsetSession() {
+        unset ($_SESSION['login']);
+        unset ($_SESSION['senha']);
+        unset ($_SESSION['nivel']);
+    }

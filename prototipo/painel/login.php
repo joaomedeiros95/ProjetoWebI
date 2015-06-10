@@ -1,4 +1,15 @@
-<?php include_once('../config.php') ?>
+<?php
+    include_once('../config.php');
+
+    session_start();
+    if(verificaUsuarioLogado()) {
+        if($_SESSION['nivel'] == tipo_pessoaDAO::$PACIENTE) {
+            header('Location:paciente/index.php');
+        } else {
+            header('Location:controle/index.php');
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
