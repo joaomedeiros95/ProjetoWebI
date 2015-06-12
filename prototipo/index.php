@@ -93,7 +93,7 @@
             </div>
 
     </form>
-
+    <?php include_once('painel/cadastro.php') ?>
 
 </div>
 	

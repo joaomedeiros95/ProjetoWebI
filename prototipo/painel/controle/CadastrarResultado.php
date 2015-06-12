@@ -11,7 +11,7 @@ include_once('header.php');
 		<br>
         <div class="form-group">
             <label for="examidado">Nome do Paciente: </label>
-            <input type="text" id="examinado" class="form-control" name="examinado" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$PACIENTE; ?>) " required>
+            <input autocomplete="off" type="text" id="examinado" class="form-control" name="examinado" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$PACIENTE; ?>) " required>
             <div id="suggestion_examinado" class="autocomplete" onclick="populateSelect()"></div>
             <input type="hidden" name="id_examinado" id="examinado_hidden" />
         </div>

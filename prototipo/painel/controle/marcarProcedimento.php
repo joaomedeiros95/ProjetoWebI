@@ -41,19 +41,19 @@ function selecioneTipoProcedimento() {
         </div>
         <div class="form-group">
             <label for="paciente">Paciente: </label>
-            <input type="text" id="paciente" class="form-control" name="paciente" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$PACIENTE; ?>) " required>
+            <input autocomplete="off" type="text" id="paciente" class="form-control" name="paciente" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$PACIENTE; ?>) " required>
             <div id="suggestion_paciente" class="autocomplete"></div>
             <input type="hidden" name="id_paciente" id="paciente_hidden" />
         </div>
         <div class="form-group consulta">
             <label for="medico">Médico: </label>
-            <input type="text" id="medico" class="form-control" name="medico" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$MEDICO; ?>)">
+            <input autocomplete="off" type="text" id="medico" class="form-control" name="medico" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$MEDICO; ?>)">
             <div id="suggestion_medico" class="autocomplete"></div>
             <input type="hidden" name="id_medico" id="medico_hidden" />
         </div>
         <div class="form-group exame noVisible">
             <label for="medico">Enfermeira: </label>
-            <input type="text" id="enfermeira" class="form-control" name="enfermeira" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$ENFERMEIRA; ?>)">
+            <input autocomplete="off" type="text" id="enfermeira" class="form-control" name="enfermeira" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$ENFERMEIRA; ?>)">
             <div id="suggestion_enfermeira" class="autocomplete"></div>
             <input type="hidden" name="id_enfermeira" id="enfermeira_hidden" />
         </div>

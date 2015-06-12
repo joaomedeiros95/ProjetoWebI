@@ -14,7 +14,7 @@ include_once('header.php');
 		<br>
         <div class="form-group">
             <label for="especialidade">Especialidade: </label>
-            <input type="text" placeholder="Digite o nome da especialidade" onkeyup="showHint(this.value, this.id)" id="especialidade" class="form-control" name="especialidade" required>
+            <input autocomplete="off" type="text" placeholder="Digite o nome da especialidade" onkeyup="showHint(this.value, this.id)" id="especialidade" class="form-control" name="especialidade" required>
             <div id="suggestion_especialidade" class="autocomplete"></div>
             <input type="hidden" name="id_especialidade" id="especialidade_hidden" />
         </div>

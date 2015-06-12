@@ -54,7 +54,7 @@ session_start();
 
     if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)) {
 		
-		echo '<script>alert("' . $nome . ' cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/painel/cadastro.php");</script>';
+		echo '<script>alert("' . $nome . ' cadastrado com Sucesso.");window.location.replace("http://joaoemedeiros.com/ufrn/hospitalweb/prototipo/");</script>';
  
     }
 	else{

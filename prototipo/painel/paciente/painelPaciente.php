@@ -102,7 +102,7 @@
                             </div>
                             <div class="form-group exame noVisible">
                                 <label for="medico">Enfermeira: </label>
-                                <input type="text" id="enfermeira" class="form-control" name="enfermeira" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$ENFERMEIRA; ?>)">
+                                <input autocomplete="off" type="text" id="enfermeira" class="form-control" name="enfermeira" onkeyup="showHint(this.value, this.id, <?php echo tipo_pessoaDAO::$ENFERMEIRA; ?>)">
                                 <div id="suggestion_enfermeira" class="autocomplete"></div>
                                 <input type="hidden" name="id_enfermeira" id="enfermeira_hidden" />
                             </div>

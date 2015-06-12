@@ -20,7 +20,7 @@
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
           <li><a href="painel/login.php">Login</a></li>
-          <li><a href="painel/cadastro.php">Cadastro</a></li>
+          <li><a data-toggle='modal' data-target='#modalCadastro'>Cadastro</a></li>
         </ul>
       </nav>
       <h3 class="text-muted nome-logo">Hospital Web</h3>
